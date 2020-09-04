@@ -16,6 +16,18 @@ body {
     background-color: #000;
 }
 
+.greenBorder {
+    border: 1px solid #02d102;
+}
+
+.redBorder {
+    border: 1px solid #d90000;
+}
+
+.whiteBorder {
+    border: 1px solid #fff;
+}
+
 @keyframes gradient {
 	0% {
 		background-position: 0% 50%;
