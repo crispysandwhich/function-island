@@ -32,7 +32,7 @@
                 </ul>
                 
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="https://discord.gg/jt9vPWf" target="_blank"><i class="fab fa-discord text-white"></i> <span>Discord</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://t.me/functionisland" target="_blank"><i class="fab fa-telegram text-white"></i> <span>Telegram</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="https://tronscan.org/#/contract/TQ66Wiihp8V8hHVwTr3a4Byog5CyEre6nM" target="_blank"><i class="fas fa-search-dollar text-white"></i> <span>Contract</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="https://github.com/FunctionIsland" target="_blank"><i class="fab fa-github text-white"></i> <span>GitHub</span></a></li>
                 </ul>
@@ -83,7 +83,11 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col text-center">
-                                        <a class="btn btn-block btn-primary roundedCorners" href="#">View on TronScan</a>
+                                        <a class="btn btn-block btn-md btn-dark text-light roundedCorners" href="#" data-toggle="modal" data-target="#sendDivsModal"><i class="fas fa-arrow-up"></i> Send D1VS</a>
+                                    </div>
+                                    
+                                    <div class="col text-center">
+                                        <a class="btn btn-block btn-md btn-dark text-light roundedCorners" href="#" data-toggle="modal" data-target="#sendDivsModal"><i class="fas fa-arrow-down"></i> Receive D1VS</a>
                                     </div>
                                 </div>
                             </div>
@@ -315,6 +319,45 @@
                     <div class="modal-footer text-white">
                         <button type="button" class="btn btn-danger roundedCorners" data-dismiss="modal">Close</button>
                     </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Transfer Modal -->
+        <div class="modal" id="sendDivsModal">
+            <div class="modal-dialog">
+                <div class="modal-content bg-dark roundedCorners">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title text-white">Transfer D1VS</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" class="form-control roundedCorners transfer-input" placeholder="D1VS to Transfer..." /><br />
+                                    <input type="text" class="form-control roundedCorners recipient-input" placeholder="Address to Send D1VS to..." />
+                                </div>
+                            </div>
+                            <br />
+                                
+                            <div class="row">
+                                <div class="col text-center">
+                                    <button class="btn btn-info btn-block roundedCorners btn-sell transfer-token-button">Transfer D1VS</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+
                 </div>
             </div>
         </div>
