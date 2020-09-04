@@ -65,7 +65,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="card glassPanel">
-                        <div class="card-header glassPanel">My DIVS</div>
+                        <div class="card-header">My DIVS</div>
                         <div class="card-body">
                             <div class="container">
                                 <div class="row">
@@ -79,7 +79,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card-footer glassPanel">
+                        <div class="card-footer">
                             <div class="container">
                                 <div class="row">
                                     <div class="col text-center">
@@ -87,7 +87,7 @@
                                     </div>
                                     
                                     <div class="col text-center">
-                                        <a class="btn btn-block btn-md btn-dark text-light roundedCorners" href="#" data-toggle="modal" data-target="#sendDivsModal"><i class="fas fa-arrow-down"></i> Receive D1VS</a>
+                                        <a class="btn btn-block btn-md btn-dark text-light roundedCorners" href="#" data-toggle="modal" data-target="#receiveDivsModal"><i class="fas fa-arrow-down"></i> Receive D1VS</a>
                                     </div>
                                 </div>
                             </div>
@@ -98,7 +98,7 @@
                 
                 <div class="col-md-6">
                     <div class="card glassPanel">
-                        <div class="card-header glassPanel">My DIVS</div>
+                        <div class="card-header">My DIVS</div>
                         <div class="card-body">
                             <div class="container">
                                 <div class="row">
@@ -114,7 +114,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card-footer glassPanel">
+                        <div class="card-footer">
                             <div class="container">
                                 <div class="row">
                                     <div class="col text-center">
@@ -135,7 +135,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="card glassPanel text-left">
-                        <div class="card-header glassPanel">Buy DIVS</div>
+                        <div class="card-header">Buy DIVS</div>
                         <div class="card-body">
                             <div class="container">
                             <div class="row">
@@ -156,7 +156,7 @@
                             
                         </div>
                         </div>
-                        <div class="card-footer glassPanel">
+                        <div class="card-footer">
                             <div class="container">
                                 <div class="row">
                                     <button class="btn btn-block btn-lg btn-primary btn-buy buy-token-button roundedCorners">Buy DIVS</button>
@@ -169,7 +169,7 @@
                 
                 <div class="col-md-6">
                     <div class="card glassPanel text-left">
-                        <div class="card-header glassPanel">Sell DIVS</div>
+                        <div class="card-header">Sell DIVS</div>
                         <div class="card-body">
                             <div class="container">
                             <div class="row">
@@ -190,7 +190,7 @@
                             
                         </div>
                         </div>
-                        <div class="card-footer glassPanel">
+                        <div class="card-footer">
                             <div class="container">
                                 <div class="row">
                                     <button class="btn btn-block btn-lg btn-danger btn-buy sell-token-button roundedCorners">Sell DIVS</button>
@@ -276,9 +276,6 @@
                 </div>
             </div>
         </div>
-        <br />
-        <br />
-        
         <div class="modal" id="usernameModal">
             <div class="modal-dialog">
                 <div class="modal-content bg-dark roundedCorners greenBorder">
@@ -322,8 +319,6 @@
                 </div>
             </div>
         </div>
-        
-        <!-- Transfer Modal -->
         <div class="modal" id="sendDivsModal">
             <div class="modal-dialog">
                 <div class="modal-content bg-dark roundedCorners">
@@ -356,6 +351,36 @@
                     <!-- Modal footer -->
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="modal" id="receiveDivsModal">
+            <div class="modal-dialog">
+                <div class="modal-content bg-dark roundedCorners">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Receive D1VS</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col text-center">
+                                    <img id="qrImage" src="#" class="rcAll" alt="Your Crop Address as a QR Code"><br />
+                                    <small id="myTronAddr"></small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-block -md btn-danger rcAll" data-dismiss="modal">Close</button>
                     </div>
 
                 </div>

@@ -17,6 +17,9 @@ async function loadTronWeb(){
 
 window.addEventListener("load",function() {
     loadTronWeb();
+    
+    $("#myTronAddr").replaceWith("<small id='myTronAddr'>" + tronWeb.defaultAddress.base58 + "</small>");
+    $("#qrImage").replaceWith('<img src="https://chart.googleapis.com/chart?chs=350x350&amp;cht=qr&amp;chl=' + tronWeb.defaultAddress.base58 + '&amp;choe=UTF-8" class="rcAll" />');
 
     // buy input
     $(".buy-input").change(function(){
