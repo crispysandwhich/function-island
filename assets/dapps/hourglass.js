@@ -1,4 +1,4 @@
-var hourglassAddress="TJ9KV8DdVhVbPAMWVHEHYnXBA4vqLwk6Jr";  // tWLTH Contract
+var hourglassAddress="TJ9KV8DdVhVbPAMWVHEHYnXBA4vqLwk6Jr";  // DIVS Contract
 var rainmakerAddress="TRrLSZknfHCS8ejYoffGsH5EeRQ4WwT2Mt"; // RainMaker Contract
 var hourglassContract;
 var userTokenBalance;
@@ -12,7 +12,7 @@ async function loadTronWeb(){
     } else {
         hourglassContract = await tronWeb.contract().at(hourglassAddress);
         rainmakerContract = await tronWeb.contract().at(rainmakerAddress);
-        alertify.success('Connected to tWLTH (TRON)');
+        alertify.success('Connected to D1VS (TRON)');
         setTimeout(function(){startLoop()},1000);
     }
 }
