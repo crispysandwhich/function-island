@@ -1,6 +1,6 @@
-var hourglassAddress="TQ66Wiihp8V8hHVwTr3a4Byog5CyEre6nM";  // D1VS Contract
+var hourglassAddress="TJ9KV8DdVhVbPAMWVHEHYnXBA4vqLwk6Jr";  // tWLTH Contract
+var rainmakerAddress="TRrLSZknfHCS8ejYoffGsH5EeRQ4WwT2Mt"; // RainMaker Contract
 var hourglassContract;
-var dripFeederContract;
 var userTokenBalance;
 var account;
 var prev_account;
@@ -8,47 +8,61 @@ var prev_account;
 async function loadTronWeb(){
     if( typeof (window.tronWeb)=== 'undefined'){
         setTimeout(loadTronWeb,1000)
+        alertify.error('Could not connect...');
     } else {
         hourglassContract = await tronWeb.contract().at(hourglassAddress);
-        setTimeout(function(){startLoop()},1000)
-        setInterval(function() {main();}, 2000);
+        rainmakerContract = await tronWeb.contract().at(rainmakerAddress);
+        alertify.success('Connected to tWLTH (TRON)');
+        setTimeout(function(){startLoop()},1000);
     }
 }
 
 window.addEventListener("load",function() {
     loadTronWeb();
-    
-    $("#myTronAddr").replaceWith("<small id='myTronAddr'>" + tronWeb.defaultAddress.base58 + "</small>");
-    $("#qrImage").replaceWith('<img src="https://chart.googleapis.com/chart?chs=350x350&amp;cht=qr&amp;chl=' + tronWeb.defaultAddress.base58 + '&amp;choe=UTF-8" class="rcAll" />');
 
     // buy input
     $(".buy-input").change(function(){
         var txValue=$(this).val();
         hourglassContract.calculateTokensReceived(tronWeb.toSun(txValue)).call().then((result)=>{
             var buyAmount=parseInt(result)/ (Math.pow(10,18));
-            $('.token-input-buy').val(formatTrxValue(buyAmount))
-        }).catch((error)=>{console.log(error)})
+            $('.token-input-buy').val(formatTrxValue(buyAmount));
+        }).catch((error)=>{console.log(error)});
+        
+        $.ajax({
+            url: "https://min-api.cryptocompare.com/data/price?fsym=TRX&tsyms=USD", success: function(trxRate){
+                $('#usdBuyValue').val(txValue * trxRate.USD.toFixed(4)) // Set USD value in the text box
+            }
+        });
     });
     
     // sell input
+    var sellAmount;
     $(".sell-input").change(function(){
         var _sellInput=$(this).val();
-        _sellInput= tronWeb.toHex((_sellInput* (Math.pow(10,18))));
-        hourglassContract.calculateTronReceived(_sellInput).call().then((result)=>{
-            var sellAmount=sunToDisplay(parseInt(result));
-            $(".token-input-sell").val(sellAmount)
-        }).catch((error)=>{console.log(error)})
+        hourglassContract.calculateTronReceived(tronWeb.toHex(_sellInput * (Math.pow(10,18)))).call().then((result)=>{
+            sellAmount = sunToDisplay(parseInt(result));
+            $(".token-input-sell").val(sellAmount);
+            $.ajax({
+                url: "https://min-api.cryptocompare.com/data/price?fsym=TRX&tsyms=USD", success: function(tokenRate){
+                    $('#usdSellValue').val(sellAmount * tokenRate.USD.toFixed(4)) // Set USD value in the text box
+                }
+            });
+        }).catch((error)=>{console.log(error)});
+        
+        
     });
     
     // buy token button
     $(".buy-token-button").click(function(){
         var buyTotal=tronWeb.toSun($(".buy-input").val());
-        hourglassContract.buy(getCookie("masternode").split(";")[0]).send({
-            callValue:buyTotal
-        }).then((result)=>{
+        hourglassContract.buy(getCookie("masternode").split(";")[0]).send({callValue:buyTotal}).then((result)=>{
+            alertify.success('Depositing TRX, Please Wait...')
             $(".buy-input").val(0);
             $(".buy-input").trigger("change")
-        }).catch((error)=>{console.log(error)})
+        }).catch((error)=>{
+            alertify.error('Failed to Deposit TRX');
+            console.log(error);
+        })
     });
     
     // sell-token-btn.click
@@ -56,9 +70,13 @@ window.addEventListener("load",function() {
         var sellTotal=$(".sell-input").val();
         sellTotal= tronWeb.toHex((sellTotal * (Math.pow(10,18))));
         hourglassContract.sell(sellTotal).send().then((result)=>{
+            alertify.success('Selling tWLTH, Please Wait...')
             $(".sell-input").val(0);
             $(".token-input-sell").val("0.00000000")
-        }).catch((error)=>{console.log(error)})
+        }).catch((error)=>{
+            alertify.error('Failed to sell tWLTH');
+            console.log(error)
+        })
     });
     
     // sell-token-btn.click
@@ -67,13 +85,40 @@ window.addEventListener("load",function() {
         var recipientAddr=$(".recipient-input").val();
         transferTotal= tronWeb.toHex((transferTotal * (Math.pow(10,18))));
         hourglassContract.transfer(recipientAddr, transferTotal).send().then((result)=>{
+            alertify.success('Sending tWLTH, Please Wait...')
             $(".transfer-input").val(0);
             $(".recipient-input").val("Recipient Address...")
-        }).catch((error)=>{console.log(error)})
+        }).catch((error)=>{
+            alertify.error('Failed to Send tWLTH');
+            console.log(error)
+        })
     });
 
-    $(".btn-reinvest").click(function(){hourglassContract.reinvest().send().then((result)=>{}).catch((error)=>{console.log(error)})});
-    $(".btn-withdraw").click(function(){hourglassContract.withdraw().send().then((result)=>{}).catch((error)=>{console.log(error)})});
+    $(".btn-reinvest").click(function(){
+        hourglassContract.reinvest().send().then((result)=>{
+            alertify.success('Reinvesting, Please Wait...')
+        }).catch((error)=>{
+            alertify.error('Failed to Reinvest.');
+            console.log(error)
+        })
+    });
+    
+    $(".btn-withdraw").click(function(){
+        hourglassContract.withdraw().send().then((result)=>{
+            alertify.success('Withdrawing TRX, Please Wait...')
+        }).catch((error)=>{
+            alertify.error('Failed to Withdraw TRX');
+            console.log(error)
+        })
+    });
+    $("#makeItRainTx").click(function(){
+        rainmakerContract.makeItRain().send().then((result)=>{
+            alertify.success('Activing Rainmaker, Please Wait...')
+    }).catch((error)=>{
+            alertify.error('Activacting Rainmaker Failed');
+            console.log(error)
+        })
+    });
 });
 
 function startLoop(){
@@ -89,7 +134,14 @@ function refreshData(){
 function updateNetworkInformation(){
     hourglassContract.totalTronBalance().call().then((result)=>{
         var TRXBalance=sunToDisplay(parseInt(result));
-        $("#contract-trx-balance").html(TRXBalance)
+        $("#contract-trx-balance").html(TRXBalance);
+        $("#TWLTHSupply").html(TRXBalance);
+        
+        $.ajax({
+            url: "https://min-api.cryptocompare.com/data/price?fsym=TRX&tsyms=USD", success: function(trxRate){
+                $("#TWLTHsizeUSD").html(formatTrxValue(TRXBalance * trxRate.USD.toFixed(4)))
+            }
+        })
     }).catch((error)=>{console.log(error)});
     
     hourglassContract.totalSupply().call().then((result)=>{
@@ -111,6 +163,16 @@ function updateNetworkInformation(){
     hourglassContract.calculateTronReceived(""+ (Math.pow(10,18))).call().then((result)=>{
         var _0xbc13x16=sunToDisplay(parseInt(result));
         $("#rate-to-sell").html(_0xbc13x16)
+    }).catch((error)=>{console.log(error)});
+    
+    rainmakerContract.myTokens().call().then((result)=>{
+        var _rainmakerTokens = parseInt(result)/ (Math.pow(10,18));
+        $("#rainmakerTokens").html(_rainmakerTokens.toFixed(0));
+    }).catch((error)=>{console.log(error)});
+    
+    rainmakerContract.myDividends().call().then((result)=>{
+        var _rainmakerDivs = sunToDisplay(parseInt(result));
+        $("#rainmakerDividends").html(_rainmakerDivs.toFixed(0));
     }).catch((error)=>{console.log(error)});
 }
 
@@ -145,7 +207,9 @@ function updateUserInformation(){
         }).catch((error)=>{console.log(error)})
     }).catch((error)=>{console.log(error)});
     
-    $("#ref-url").val("https://functionisland.xyz/divs.html?masternode=" + tronWeb.defaultAddress.base58)
+    $("#ref-url").val("https://trx.commonwealth.gg/dashboard.html?masternode=" + tronWeb.defaultAddress.base58)
+    $("#qrImage").replaceWith('<img src="https://chart.googleapis.com/chart?chs=350x350&amp;cht=qr&amp;chl=' + tronWeb.defaultAddress.base58 + '&amp;choe=UTF-8" class="roundedCorners" />');
+    $("#myTronAddr").replaceWith('<small>'+ tronWeb.defaultAddress.base58 +'</small>');
 }
 
 function checkwallet(){
@@ -157,6 +221,7 @@ function checkwallet(){
     } else {account= 0}
 }
 
+const numberWithCommas = (x) => {return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");}
 function sunToDisplay(_0xbc13x20){return formatTrxValue(tronWeb.fromSun(_0xbc13x20))}
 function formatTrxValue(_0xbc13x22){return parseFloat(parseFloat(_0xbc13x22).toFixed(2))}
 

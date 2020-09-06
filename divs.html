@@ -33,7 +33,7 @@
                 
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a class="nav-link" href="https://t.me/functionisland" target="_blank"><i class="fab fa-telegram text-white"></i> <span>Telegram</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://tronscan.org/#/contract/TQ66Wiihp8V8hHVwTr3a4Byog5CyEre6nM" target="_blank"><i class="fas fa-search-dollar text-white"></i> <span>Contract</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://tronscan.org/#/contract/TJ9KV8DdVhVbPAMWVHEHYnXBA4vqLwk6Jr" target="_blank"><i class="fas fa-search-dollar text-white"></i> <span>Contract</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="https://github.com/FunctionIsland" target="_blank"><i class="fab fa-github text-white"></i> <span>GitHub</span></a></li>
                 </ul>
             </div>
@@ -52,11 +52,6 @@
                             <img src="assets/img/logo.png" width="140px" height="140px" class="rounded-circle" />
                             <h1 class="text-white">Function Island</h1>
                             <p class="text-white">Hold DIVS and Earn Dividends</p>
-                            <p class="text-white">
-                                <span class="arcTag">
-                                    <a class="btn btn-block btn-md btn-info text-light roundedCorners" href="#" data-toggle="modal" data-target="#usernameModal"><i class="fas fa-arrow-right"></i> Register a Username</a>
-                                </span>
-                            </p>
                         </div>
                     </div>
                 </div>
@@ -70,11 +65,11 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col text-center">
-                                        <h5><span class="user-token-balance text-white">0.00000000</span> DIVS</h5>
-                                        <p>
+                                        <h3><span class="user-token-balance text-white">0.00000000</span> D1VS</h3>
+                                        <h5>
                                             <span class="badge badge-pill badge-danger"><span id="user-trx-balance">0.00000000</span> TRX</span>
-                                             / <span class="badge badge-pill badge-light">$<span id="user-usd-balance">0.00</span> USD</span>
-                                        </p>
+                                             / <span class="badge badge-pill badge-light text-dark">$<span id="user-usd-balance" class="text-dark">0.00</span> USD</span>
+                                        </h5>
                                     </div>
                                 </div>
                             </div>
@@ -98,7 +93,7 @@
                 
                 <div class="col-md-6">
                     <div class="card glassPanel">
-                        <div class="card-header">My Earnings</div>
+                        <div class="card-header">My D1VS</div>
                         <div class="card-body">
                             <div class="container">
                                 <div class="row">
@@ -118,11 +113,11 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col text-center">
-                                        <button class="btn btn-block btn-success btn-reinvest roundedCorners"><b><i class="fas fa-recycle"></i> +<span id="user-reinvest">0.00</span> DIVS</b></button>
+                                        <button class="btn btn-block btn-primary btn-reinvest roundedCorners"><b><i class="fas fa-recycle"></i> +<span id="user-reinvest">0.00</span> D1VS</b></button>
                                     </div>
                                     
                                     <div class="col text-center">
-                                        <button class="btn btn-block btn-danger btn-withdraw roundedCorners"><i class="fas fa-hand-holding-usd"></i> Withdraw</button>
+                                        <button class="btn btn-block btn-dark btn-withdraw roundedCorners"><i class="fas fa-hand-holding-usd"></i> Withdraw</button>
                                     </div>
                                 </div>
                             </div>
@@ -135,31 +130,43 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="card glassPanel text-left">
-                        <div class="card-header">Buy DIVS</div>
+                        <div class="card-header">Buy D1VS</div>
                         <div class="card-body">
                             <div class="container">
                             <div class="row">
                                 <div class="col">
-                                    <small>Current DIVS Price:</small>
-                                    <h1 class="text-white"><span class="text-white"><span id="rate-to-buy">0</span> TRX</span></h1>
+                                    <small>Current Price:</small>
+                                    <h1 class="text-success"><span class="text-success"><span id="rate-to-buy">0</span> TRX<small>/ D1VS</small></span></h1>
                                 </div>
                             </div>
                             
-                            <div class="row">
-                                <div class="col text-center">
-                                    <input type="text" class="form-control buy-input" placeholder="TRX to spend" /><br />
-                                    <input type="text" class="form-control token-input-buy" readonly="" value="0.00000000"><br />
-                                    <small>Every DIVS purchase incurs a 10&#37; Dividend Fee.</small>
+                                <div class="row">
+                                    <!-- TRX Buy Input -->
+                                    <div class="col text-left">
+                                        <label>TRX to Spend:</label>
+                                        <input type="text" class="form-control roundedCorners buy-input" placeholder="TRX to spend" />
+                                    </div>
+                                
+                                    <!-- USD Display -->
+                                    <div class="col text-left">
+                                        <label>USD Value:</label>
+                                        <input type="text" class="form-control roundedCorners text-dark" placeholder="USD Value" id="usdBuyValue" readonly="" />
+                                    </div>
+                                </div>
+                                <br />
+                            
+                                <div class="row">
+                                    <div class="col text-center">
+                                        <input type="text" class="form-control roundedCorners text-dark token-input-buy" readonly="" value="0.00000000">
+                                        <small>Every D1VS purchase incurs a 10&#37; Dividend Fee.</small>
+                                    </div>
                                 </div>
                             </div>
-                            
-                            
-                        </div>
                         </div>
                         <div class="card-footer">
                             <div class="container">
                                 <div class="row">
-                                    <button class="btn btn-block btn-lg btn-primary btn-buy buy-token-button roundedCorners">Buy DIVS</button>
+                                    <button class="btn btn-block btn-lg btn-success btn-buy buy-token-button roundedCorners">Buy D1VS</button>
                                 </div>
                             </div>
                         </div>
@@ -169,36 +176,57 @@
                 
                 <div class="col-md-6">
                     <div class="card glassPanel text-left">
-                        <div class="card-header">Sell DIVS</div>
+                        <div class="card-header">Sell D1VS</div>
                         <div class="card-body">
                             <div class="container">
                             <div class="row">
                                 <div class="col">
-                                    <small>Current DIVS Value:</small>
-                                    <h1 class="text-white"><span class="text-danger"><span id="rate-to-sell">0</span> TRX</span></h1>
+                                    <small>Current Value:</small>
+                                    <h1 class="text-danger"><span class="text-danger"><span id="rate-to-sell">0</span> TRX<small>/ D1VS</small></span></h1>
                                 </div>
                             </div>
                             
-                            <div class="row">
-                                <div class="col text-center">
-                                    <input type="text" class="form-control sell-input" placeholder="Amount of DIVS"><br />
-                                    <input type="text" class="form-control trx-input-sell" readonly="" value="0.00000000"><br />
-                                    <small>Every DIVS sale incurs a 10&#37; Dividend Fee.</small>
+                                <div class="row">
+                                    <div class="col text-left">
+                                        <label>D1VS to Sell:</label>
+                                        <input type="number" class="form-control roundedCorners sell-input" placeholder="Amount of D1VS">
+                                    </div>
+                                    
+                                    <!-- USD Display -->
+                                    <div class="col text-left">
+                                        <label>USD Value:</label>
+                                        <input type="text" class="form-control roundedCorners" placeholder="USD Value" id="usdSellValue" readonly="" />
+                                    </div>
                                 </div>
-                            </div>
+                                <br />
                             
-                            
+                                <div class="row">
+                                    <div class="col text-center">
+                                        <input type="text" class="form-control roundedCorners trx-input-sell" readonly="" value="0.00000000">
+                                        <small>Every D1VS sale incurs a 10&#37; Dividend Fee.</small>
+                                    </div>
+                                </div>
                         </div>
                         </div>
                         <div class="card-footer">
                             <div class="container">
                                 <div class="row">
-                                    <button class="btn btn-block btn-lg btn-danger btn-buy sell-token-button roundedCorners">Sell DIVS</button>
+                                    <button class="btn btn-block btn-lg btn-danger btn-buy sell-token-button roundedCorners">Sell D1VS</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <br />
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <a class="btn btn-block btn-lg btn-light whiteBorder roundedCorners"  href="#" data-toggle="modal" data-target="#rainmakerModal"><i class="fas fa-tint"></i> RainMaker (Price Floor)</a><br />
+                </div>
+                
+                <div class="col-md-6">
+                    <a class="btn btn-block btn-lg btn-light whiteBorder roundedCorners" href="https://tronscan.org/#/contract/TJ9KV8DdVhVbPAMWVHEHYnXBA4vqLwk6Jr/code" target="_blank"><i class="fas fa-search-dollar"></i> View Contract</a><br />
                 </div>
             </div>
             
@@ -265,67 +293,14 @@
             </ul>
         </nav>
 
-        <div class="modal fade" tabindex="-1" id="instructions-modal" data-backdrop="static" data-keyboard="false">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Tutorial</h5>
-                        <button type="button" class="close"><span aria-hidden="true">×</span></button>
-                    </div>
-                    <div class="modal-body"></div>
-                </div>
-            </div>
-        </div>
-        <div class="modal" id="usernameModal">
-            <div class="modal-dialog">
-                <div class="modal-content bg-dark roundedCorners greenBorder">
-                    <div class="modal-header"><h4 class="modal-title text-success">Register a Username</h4></div>
-                    <div class="modal-body">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col text-left">
-                                    <h3 class="text-white"></h3>
-                                    <label class="text-white">Enter a name: </label>
-                                    <input type="text" name="newUsername" id="newUsername" onchange="checkAvailability()" class="form-control roundedCorners" placeholder="Enter your desired Username" />
-                                    <p class="text-white text-center"><b>Max. 12 Letters/numbers, no spaces! Change to another available tag at any time for another 10 TRX!</b></p>
-                                    <br />
-                                    Username Available: <span id="availableStatus" class="text-white"></span>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col text-center">
-                                    <button onclick="checkAvailability()" class="btn btn-block btn-md btn-warning roundedCorners">Check Availability</button><br />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <h3 class="text-white">What is a Username?</h3>
-                                <p class="text-white">
-                                    Your username is your personal tag, across all of Function Island - the single piece of identity that is tied to your wallet address - your greatest online handle. Make it a good one!<br />
-                                    <br />
-                                    Registering an Username costs <b>10 TRX</b> - a small fee to prevent namesquatting, which is collected by the Core Developer Team for maintenance of the platform.
-                                </p>
-                            </div>
-                            <div id="registerButtonArea" class="row" style="display: none;">
-                                <div class="col text-center">
-                                    <button onclick="registerName()" class="btn btn-block btn-md btn-success roundedCorners">Register</button>
-                                </div>
-                            </div>
-                            <br />
-                        </div>
-                    </div>
-                    <div class="modal-footer text-white">
-                        <button type="button" class="btn btn-danger roundedCorners" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!-- MODALS -->
         <div class="modal" id="sendDivsModal">
             <div class="modal-dialog">
                 <div class="modal-content bg-dark roundedCorners">
 
                     <!-- Modal Header -->
                     <div class="modal-header">
-                        <h4 class="modal-title text-white">Transfer D1VS</h4>
+                        <h4 class="modal-title text-white">Send D1VS</h4>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
 
@@ -334,15 +309,15 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col">
-                                    <input type="text" class="form-control roundedCorners transfer-input" placeholder="D1VS to Transfer..." /><br />
-                                    <input type="text" class="form-control roundedCorners recipient-input" placeholder="Address to Send D1VS to..." />
+                                    <input type="text" class="form-control roundedCorners transfer-input" placeholder="D1VS to Send..." /><br />
+                                    <input type="text" class="form-control roundedCorners recipient-input" placeholder="Address to send D1VS to..." />
                                 </div>
                             </div>
                             <br />
                                 
                             <div class="row">
                                 <div class="col text-center">
-                                    <button class="btn btn-info btn-block roundedCorners btn-sell transfer-token-button">Transfer D1VS</button>
+                                    <button class="btn btn-info btn-block roundedCorners btn-sell transfer-token-button"><i class="fas fa-arrow-up"></i> Send D1VS <i class="fas fa-arrow-up"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -356,6 +331,7 @@
                 </div>
             </div>
         </div>
+        
         <div class="modal" id="receiveDivsModal">
             <div class="modal-dialog">
                 <div class="modal-content bg-dark roundedCorners">
@@ -371,7 +347,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col text-center">
-                                    <img id="qrImage" src="#" class="rcAll" alt="Your Crop Address as a QR Code"><br />
+                                    <img id="qrImage" src="#" class="roundedCorners" alt="Your Crop Address as a QR Code"><br />
+                                    <br />
+                                    <b>TRON Address: </b><br />
                                     <small id="myTronAddr"></small>
                                 </div>
                             </div>
@@ -380,7 +358,91 @@
 
                     <!-- Modal footer -->
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-block -md btn-danger rcAll" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-block -md btn-danger roundedCorners" data-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal" id="settingsModal">
+            <div class="modal-dialog">
+                <div class="modal-content bg-light roundedCorners">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">D1VS Settings</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col text-left">
+                                    <h3>Theme Settings</h3>
+                                    <p>Toggle the switch below to enable or disable Dark Mode!</p>
+                                    <div class="custom-control custom-switch">
+                                        <input type="checkbox" class="custom-control-input" id="darkSwitch">
+                                        <label class="custom-control-label" for="darkSwitch">Use Dark Mode</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-block -md btn-danger roundedCorners" data-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal" id="rainmakerModal">
+            <div class="modal-dialog">
+                <div class="modal-content bg-dark roundedCorners">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Price Floor</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col text-center">
+                                    <h3><span id="rainmakerDividends">0</span> TRX</h3>
+                                    <small>Pricefloor Earnings</small>
+                                </div>
+                                
+                                <div class="col text-center">
+                                    <h3><span id="rainmakerTokens">0</span> D1VS</h3>
+                                    <small>Providing Permanent Value</small>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col text-center">
+                                    <br />
+                                    <small>
+                                        The button below tells the PriceFloor contract to buy as much D1VS as it can with the Dividends it has earned. This has the effect of raising the minimum price which D1VS will ever be sold at - and since the Price Floor contract can never sell, transfer or destroy its D1VS, this minimum value will only grow larger over time as the D1VS platform is used.
+                                    </small>
+                                    <br />
+                                    <br />
+                                    <button id="makeItRainTx" class="btn btn-block btn-md btn-success roundedCorners" href="#">Raise Price Floor</button><br />
+                                    <a class="btn btn-block btn-md btn-light roundedCorners" href="https://tronscan.org/#/contract/TRrLSZknfHCS8ejYoffGsH5EeRQ4WwT2Mt/code" target="_blank">View Pricefloor Contract</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-block -md btn-danger roundedCorners" data-dismiss="modal">Close</button>
                     </div>
 
                 </div>
@@ -390,9 +452,9 @@
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/popper.min.js"></script>
 		<script src="assets/js/bootstrap.min.js"></script>
+		<script src="assets/js/alertify.min.js"></script>
         
 		<script src="assets/dapps/hourglass.js"></script>
-		<script src="assets/dapps/username.js"></script>
         
 	   <script type="text/javascript">
 			function getCookie(name) {

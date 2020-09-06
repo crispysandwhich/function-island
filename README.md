@@ -8,7 +8,7 @@ Function Island is a collection of Open Source Dapps, with Smart Contracts deplo
 
 ## Included Dapps
 ### D1VS Game
- - Contract Address: TQ66Wiihp8V8hHVwTr3a4Byog5CyEre6nM
+ - Contract Address: TJ9KV8DdVhVbPAMWVHEHYnXBA4vqLwk6Jr
  
 D1VS is an Hourglass "Proof of Weak Hands" game, with 10% Buy/Sell Fees, and 3% Referral Bonus rates. Dividends are earned as players buy and sell D1VS. Compound your earnings or withdraw anytime.
 
