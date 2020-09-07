@@ -90,7 +90,7 @@ function checkValidBuy(amount) {
     
     let received = getTrxBuy(amount)
     if ((received * 1e18) > Number(bankData.tokenBal)) {
-        $('#buyTokensBtn').text('EXCHANGE BALANCE TOO LOW')
+        $('#buyTokensBtn').text('NOT ENOUGH USDJ')
         document.getElementById("buyTokensBtn").className = "btn btn-block btn-lg btn-dark roundedCorners text-danger"; 
         validBuy = false
     }
@@ -124,7 +124,7 @@ function checkValidSell(amount) {
     }
     let received = getTrxSell(amount)
     if ((received * 1e6) > Number(bankData.tronBal)) {
-        $('#sellTokensBtn').text('EXCHANGE BALANCE TOO LOW')
+        $('#sellTokensBtn').text('NOT ENOUGH TRX')
         document.getElementById("sellTokensBtn").className = "btn btn-block btn-lg btn-danger roundedCorners text-white"; 
         $('.availableTrxSell').css('color', '#ff3912')
         validSell = false
