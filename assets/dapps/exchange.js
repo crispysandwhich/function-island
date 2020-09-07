@@ -210,6 +210,7 @@ function approveBank() {
     if (customView || defaultTronWeb) {return}
     let amount = tronWeb.toHex(2**255)
     token.approve(bankAddr, amount).send()
+    alertify.success("Approving USDJ, Please Wait...")
 }
 
 function bankBuy() {

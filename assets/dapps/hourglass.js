@@ -70,11 +70,11 @@ window.addEventListener("load",function() {
         var sellTotal=$(".sell-input").val();
         sellTotal= tronWeb.toHex((sellTotal * (Math.pow(10,18))));
         hourglassContract.sell(sellTotal).send().then((result)=>{
-            alertify.success('Selling tWLTH, Please Wait...')
+            alertify.success('Selling D1VS, Please Wait...')
             $(".sell-input").val(0);
             $(".token-input-sell").val("0.00000000")
         }).catch((error)=>{
-            alertify.error('Failed to sell tWLTH');
+            alertify.error('Failed to sell D1VS');
             console.log(error)
         })
     });
@@ -85,11 +85,11 @@ window.addEventListener("load",function() {
         var recipientAddr=$(".recipient-input").val();
         transferTotal= tronWeb.toHex((transferTotal * (Math.pow(10,18))));
         hourglassContract.transfer(recipientAddr, transferTotal).send().then((result)=>{
-            alertify.success('Sending tWLTH, Please Wait...')
+            alertify.success('Sending D1VS, Please Wait...')
             $(".transfer-input").val(0);
             $(".recipient-input").val("Recipient Address...")
         }).catch((error)=>{
-            alertify.error('Failed to Send tWLTH');
+            alertify.error('Failed to Send D1VS');
             console.log(error)
         })
     });
@@ -113,9 +113,9 @@ window.addEventListener("load",function() {
     });
     $("#makeItRainTx").click(function(){
         rainmakerContract.makeItRain().send().then((result)=>{
-            alertify.success('Activing Rainmaker, Please Wait...')
+            alertify.success('Activating Rainmaker, Please Wait...')
     }).catch((error)=>{
-            alertify.error('Activacting Rainmaker Failed');
+            alertify.error('Activating Rainmaker Failed');
             console.log(error)
         })
     });
