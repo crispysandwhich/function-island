@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-react-helmet="lang">
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -7,10 +7,12 @@
         <meta name="author" content="Mr Function">
         <title>Function Island | D1VS</title>
 
-        <!-- Core CSS -->
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <!-- Alertify CSS -->
         <link rel="stylesheet" href="assets/css/alertify.min.css">
         <link rel="stylesheet" href="assets/css/themes/bootstrap.min.css">
+        
+        <!-- Core CSS -->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/css/custom.css">
         
         <link rel="icon" type="image/png" href="assets/img/logo.png" />
@@ -20,256 +22,276 @@
     </head>
     
     <body class="text-white">
-        <nav class="navbar navbar-expand-lg navbar-dark blackNavbar fixed-top">
-            <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png" width="25px" height="25px" class="rounded-circle" /> FunctionIsland</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark blackNavbar fixed-top">
+                <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png" width="25px" height="25px" class="rounded-circle" /> FunctionIsland</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-            <div class="collapse navbar-collapse" id="navbarColor03">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item"><a class="nav-link" href="divs.html"><span><i class="fas fa-hand-holding-usd text-white"></i> D1VS</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="island.html"><span><i class="fas fa-globe text-white"></i> ISLAND</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="exchange.html"><span><i class="fas fa-random text-white"></i> EXCHANGE</span></a></li>
-                    
-                </ul>
+                <div class="collapse navbar-collapse" id="navbarColor03">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item"><a class="nav-link" href="divs.html"><span><i class="fas fa-hand-holding-usd text-white"></i> D1VS</span></a></li>
+                        <li class="nav-item"><a class="nav-link" href="island.html"><span><i class="fas fa-globe text-white"></i> ISLAND</span></a></li>
+                        <li class="nav-item"><a class="nav-link" href="exchange.html"><span><i class="fas fa-random text-white"></i> EXCHANGE</span></a></li>
+                    </ul>
                 
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="https://t.me/functionisland" target="_blank"><i class="fab fa-telegram text-white"></i> <span>Telegram</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://tronscan.org/#/contract/TJ9KV8DdVhVbPAMWVHEHYnXBA4vqLwk6Jr" target="_blank"><i class="fas fa-search-dollar text-white"></i> <span>Contract</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://github.com/FunctionIsland" target="_blank"><i class="fab fa-github text-white"></i> <span>GitHub</span></a></li>
-                </ul>
-            </div>
-        </nav>
-        <br />
-        <br />
-        <br />
-        <br />
-        
-        <div class="container" id="root">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="card glassPanel">
-                        <div class="card-header">My Wallet</div>
-                        <div class="card-body">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col text-center">
-                                        <h3><span class="user-token-balance text-white">0.00000000</span> D1VS</h3>
-                                        <h5>
-                                            <span class="badge badge-pill badge-danger"><span id="user-trx-balance">0.00000000</span> TRX</span>
-                                             / <span class="badge badge-pill badge-light text-dark">$<span id="user-usd-balance" class="text-dark">0.00</span> USD</span>
-                                        </h5>
-                                    </div>
-                                </div>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-share-alt text-white"></i> Social</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="https://twitter.com/FunctionIsland"><i class="fab fa-twitter"></i> Twitter</a>
+                                <a class="dropdown-item" href="https://t.me/FunctionIsland"><i class="fab fa-telegram"></i> Telegram</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="https://discord.gg/FmCEbPU"><i class="fab fa-discord"></i> Discord</a>
                             </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col text-center">
-                                        <a class="btn btn-block btn-md btn-dark redBorder text-light roundedCorners" href="#" data-toggle="modal" data-target="#sendDivsModal"><i class="fas fa-arrow-up"></i> Send</a>
-                                    </div>
-                                    
-                                    <div class="col text-center">
-                                        <a class="btn btn-block btn-md btn-dark greenBorder text-light roundedCorners" href="#" data-toggle="modal" data-target="#receiveDivsModal"><i class="fas fa-arrow-down"></i> Receive</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br />
-                </div>
-                
-                <div class="col-md-6">
-                    <div class="card glassPanel">
-                        <div class="card-header">My D1VS</div>
-                        <div class="card-body">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col text-center">
-                                        <h5 class="text-white"><span class="user-dividends">0.00000000</span> TRX</h5>
-                                        <p>My Dividends</p>
-                                    </div>
-                                    
-                                    <div class="col text-center">
-                                        <h5 class="text-white">+ &#36;<span id="user-dividends-usd" class="text-white">0.00</span> USD</h5>
-                                        <p>Growth on Reinvest</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col text-center">
-                                        <button class="btn btn-block btn-primary btn-reinvest roundedCorners"><b><i class="fas fa-recycle"></i> +<span id="user-reinvest">0.00</span> D1VS</b></button>
-                                    </div>
-                                    
-                                    <div class="col text-center">
-                                        <button class="btn btn-block btn-dark btn-withdraw roundedCorners"><i class="fas fa-hand-holding-usd"></i> Withdraw</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br />
-                </div>
-            </div>
-            
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="card glassPanel text-left">
-                        <div class="card-header">Buy D1VS</div>
-                        <div class="card-body">
-                            <div class="container">
-                            <div class="row">
-                                <div class="col">
-                                    <small>Current Price:</small>
-                                    <h1 class="text-success"><span class="text-success"><span id="rate-to-buy">0</span> TRX<small>/ D1VS</small></span></h1>
-                                </div>
-                            </div>
-                            
-                                <div class="row">
-                                    <!-- TRX Buy Input -->
-                                    <div class="col text-left">
-                                        <label>TRX to Spend:</label>
-                                        <input type="text" class="form-control roundedCorners buy-input" placeholder="TRX to spend" />
-                                    </div>
-                                
-                                    <!-- USD Display -->
-                                    <div class="col text-left">
-                                        <label>USD Value:</label>
-                                        <input type="text" class="form-control roundedCorners text-dark" placeholder="USD Value" id="usdBuyValue" readonly="" />
-                                    </div>
-                                </div>
-                                <br />
-                            
-                                <div class="row">
-                                    <div class="col text-center">
-                                        <input type="text" class="form-control roundedCorners text-dark token-input-buy" readonly="" value="0.00000000">
-                                        <small>Every D1VS purchase incurs a 10&#37; Dividend Fee.</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="container">
-                                <div class="row">
-                                    <button class="btn btn-block btn-lg btn-success btn-buy buy-token-button roundedCorners">Buy D1VS</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br />
-                </div>
-                
-                <div class="col-md-6">
-                    <div class="card glassPanel text-left">
-                        <div class="card-header">Sell D1VS</div>
-                        <div class="card-body">
-                            <div class="container">
-                            <div class="row">
-                                <div class="col">
-                                    <small>Current Value:</small>
-                                    <h1 class="text-danger"><span class="text-danger"><span id="rate-to-sell">0</span> TRX<small>/ D1VS</small></span></h1>
-                                </div>
-                            </div>
-                            
-                                <div class="row">
-                                    <div class="col text-left">
-                                        <label>D1VS to Sell:</label>
-                                        <input type="number" class="form-control roundedCorners sell-input" placeholder="Amount of D1VS">
-                                    </div>
-                                    
-                                    <!-- USD Display -->
-                                    <div class="col text-left">
-                                        <label>USD Value:</label>
-                                        <input type="text" class="form-control roundedCorners" placeholder="USD Value" id="usdSellValue" readonly="" />
-                                    </div>
-                                </div>
-                                <br />
-                            
-                                <div class="row">
-                                    <div class="col text-center">
-                                        <input type="text" class="form-control roundedCorners trx-input-sell" readonly="" value="0.00000000">
-                                        <small>Every D1VS sale incurs a 10&#37; Dividend Fee.</small>
-                                    </div>
-                                </div>
-                        </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="container">
-                                <div class="row">
-                                    <button class="btn btn-block btn-lg btn-danger btn-buy sell-token-button roundedCorners">Sell D1VS</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br />
-                </div>
-            </div>
-            
-            <div class="row">
-                <div class="col-md-6">
-                    <a class="btn btn-block btn-lg btn-light whiteBorder roundedCorners"  href="#" data-toggle="modal" data-target="#rainmakerModal"><i class="fas fa-tint"></i> Price Floor</a><br />
-                </div>
-                
-                <div class="col-md-6">
-                    <a class="btn btn-block btn-lg btn-light whiteBorder roundedCorners" href="https://tronscan.org/#/contract/TJ9KV8DdVhVbPAMWVHEHYnXBA4vqLwk6Jr/code" target="_blank"><i class="fas fa-search-dollar"></i> View Contract</a><br />
-                </div>
-            </div>
-            
-            <div class="row jumbotron glassPanel text-dark">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6 text-left">
-                            <h3 class="text-white">Here&apos;s your Link...</h3>
-                            <input id="ref-url" class="form-control text-secondary" value="" readonly="" />
-                            <small class="text-white">When others use your link, you get a commission!</small>
-                            <br />
-                            <br />
-                        </div>
-                        <br />
+                        </li>
                         
-                        <div class="col-md-6 text-center">
-                            <div class="row">
-                                <div class="col text-center">
-                                    <br />
-                                    <h3 class="text-danger">
-                                        <span class="badge badge-pill badge-danger">
-                                            <span id="contract-trx-balance">0</span> TRX
-                                        </span>
-                                    </h3>
-                                    <p class="text-white">Contract Holdings</p>
+                        <li class="nav-item"><a class="nav-link" href="https://github.com/FunctionIsland" target="_blank"><i class="fab fa-github text-white"></i> <span>GitHub</span></a></li>
+                        <li class="nav-item"><a class="nav-link" href="names.html"><i class="fas fa-user text-white"></i> <span class="arcTag">Player</span></a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        
+        <main>
+            <div class="row jumbotron glassPanel" style="margin-top: 55px;">
+                <div class="container">
+                    <div class="row text-center">
+                        <div class="col text-center">
+                            <img src="assets/img/logo.png" width="140px" height="140px" class="rounded-circle" />
+                            <h1><span>D1VS Game</span></h1>
+                            <p class="text-white">Buy &amp; HODL D1VS, and earn TRX Dividends!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="container" id="root">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card glassPanel roundedCorners">
+                            <div class="card-header">My Wallet</div>
+                            <div class="card-body">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <h3><span class="user-token-balance text-white">0.00000000</span> D1VS</h3>
+                                            <h5>
+                                                <span class="badge badge-pill badge-danger"><span id="user-trx-balance">0.00000000</span> TRX</span>
+                                                 / <span class="badge badge-pill badge-light text-dark">$<span id="user-usd-balance" class="text-dark">0.00</span> USD</span>
+                                            </h5>
+                                        </div>
+                                    </div>
                                 </div>
-                                
-                                <div class="col text-center">
-                                    <br />
-                                    <h3 class="text-white">
-                                        <span class="badge badge-pill badge-light">
-                                            <span style="display: inline" id="contract-token-balance">0</span> DIVS
-                                        </span>
-                                    </h3>
-                                    <p class="text-white">Total Supply</p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <a class="btn btn-block btn-md btn-dark redBorder text-light roundedCorners" href="#" data-toggle="modal" data-target="#sendDivsModal"><i class="fas fa-arrow-up"></i> Send</a>
+                                        </div>
+
+                                        <div class="col text-center">
+                                            <a class="btn btn-block btn-md btn-dark greenBorder text-light roundedCorners" href="#" data-toggle="modal" data-target="#receiveDivsModal"><i class="fas fa-arrow-down"></i> Receive</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card glassPanel roundedCorners">
+                            <div class="card-header">My D1VS</div>
+                            <div class="card-body">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <h5 class="text-white"><span class="user-dividends">0.00000000</span> TRX</h5>
+                                            <p>My Dividends</p>
+                                        </div>
+
+                                        <div class="col text-center">
+                                            <h5 class="text-white">+ &#36;<span id="user-dividends-usd" class="text-white">0.00</span> USD</h5>
+                                            <p>Growth on Reinvest</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <button class="btn btn-block btn-primary btn-reinvest roundedCorners"><b><i class="fas fa-recycle"></i> +<span id="user-reinvest">0.00</span> D1VS</b></button>
+                                        </div>
+
+                                        <div class="col text-center">
+                                            <button class="btn btn-block btn-dark btn-withdraw roundedCorners"><i class="fas fa-hand-holding-usd"></i> Withdraw</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <br />
                     </div>
                 </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card glassPanel roundedCorners text-left">
+                            <div class="card-header">Buy D1VS</div>
+                            <div class="card-body">
+                                <div class="container">
+                                <div class="row">
+                                    <div class="col">
+                                        <small>Current Price:</small>
+                                        <h1 class="text-success"><span class="text-success"><span id="rate-to-buy">0</span> TRX<small>/ D1VS</small></span></h1>
+                                    </div>
+                                </div>
+
+                                    <div class="row">
+                                        <!-- TRX Buy Input -->
+                                        <div class="col text-left">
+                                            <label>TRX to Spend:</label>
+                                            <input type="text" class="form-control roundedCorners buy-input" placeholder="TRX to spend" />
+                                        </div>
+
+                                        <!-- USD Display -->
+                                        <div class="col text-left">
+                                            <label>USD Value:</label>
+                                            <input type="text" class="form-control roundedCorners text-dark" placeholder="USD Value" id="usdBuyValue" readonly="" />
+                                        </div>
+                                    </div>
+                                    <br />
+
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <input type="text" class="form-control roundedCorners text-dark token-input-buy" readonly="" value="0.00000000">
+                                            <small>Every D1VS purchase incurs a 10&#37; Dividend Fee.</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="container">
+                                    <div class="row">
+                                        <button class="btn btn-block btn-lg btn-success btn-buy buy-token-button roundedCorners">Buy D1VS</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card glassPanel roundedCorners text-left">
+                            <div class="card-header">Sell D1VS</div>
+                            <div class="card-body">
+                                <div class="container">
+                                <div class="row">
+                                    <div class="col">
+                                        <small>Current Value:</small>
+                                        <h1 class="text-danger"><span class="text-danger"><span id="rate-to-sell">0</span> TRX<small>/ D1VS</small></span></h1>
+                                    </div>
+                                </div>
+
+                                    <div class="row">
+                                        <div class="col text-left">
+                                            <label>D1VS to Sell:</label>
+                                            <input type="number" class="form-control roundedCorners sell-input" placeholder="Amount of D1VS">
+                                        </div>
+
+                                        <!-- USD Display -->
+                                        <div class="col text-left">
+                                            <label>USD Value:</label>
+                                            <input type="text" class="form-control roundedCorners" placeholder="USD Value" id="usdSellValue" readonly="" />
+                                        </div>
+                                    </div>
+                                    <br />
+
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <input type="text" class="form-control roundedCorners token-input-sell" readonly="" value="0.00000000">
+                                            <small>Every D1VS sale incurs a 10&#37; Dividend Fee.</small>
+                                        </div>
+                                    </div>
+                            </div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="container">
+                                    <div class="row">
+                                        <button class="btn btn-block btn-lg btn-danger btn-buy sell-token-button roundedCorners">Sell D1VS</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <a class="btn btn-block btn-lg btn-light whiteBorder roundedCorners"  href="#" data-toggle="modal" data-target="#rainmakerModal"><i class="fas fa-tint"></i> Price Floor</a><br />
+                    </div>
+
+                    <div class="col-md-6">
+                        <a class="btn btn-block btn-lg btn-light whiteBorder roundedCorners" href="https://tronscan.org/#/contract/TJ9KV8DdVhVbPAMWVHEHYnXBA4vqLwk6Jr/code" target="_blank"><i class="fas fa-search-dollar"></i> View Contract</a><br />
+                    </div>
+                </div>
+
+                <div class="row jumbotron glassPanel roundedCorners text-dark">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 text-left">
+                                <h3 class="text-white">Here&apos;s your Link...</h3>
+                                <input id="ref-url" class="form-control text-secondary" value="" readonly="" />
+                                <small class="text-white">When others use your link to buy D1VS, you get a 3&#37; commission!</small>
+                                <br />
+                                <br />
+                            </div>
+                            <br />
+
+                            <div class="col-md-6 text-center">
+                                <div class="row">
+                                    <div class="col text-center">
+                                        <br />
+                                        <h3 class="text-danger">
+                                            <span class="badge badge-pill badge-danger">
+                                                <span id="contract-trx-balance">0</span> TRX
+                                            </span>
+                                        </h3>
+                                        <p class="text-white">Contract Holdings</p>
+                                    </div>
+
+                                    <div class="col text-center">
+                                        <br />
+                                        <h3 class="text-white">
+                                            <span class="badge badge-pill badge-light">
+                                                <span style="display: inline" id="contract-token-balance">0</span> DIVS
+                                            </span>
+                                        </h3>
+                                        <p class="text-white">Total Supply</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        <br />
+        </main>
         
         <footer class="py-5 px-5 glassPanel rcTop text-white">
             <div class="row">
                 <div class="col text-center">
-                    <b>The Fine Print</b>
+                    <b>Terms of Use</b>
                     <small class="d-block mb-3 text-white">
-                        Function Island, its connected Smart Contract and its dependencies &amp; productions are provided on an &quot;as-is&quot; basis, with zero guarantee of bug-free operation.<br />
-                        Only use this Dapp if you can trust its code - Developers, maintainers, contributors, participants or representatives will <b>NOT</b> be held responsible<br />
-                        for losses resulting in any action taken by you, involving the use or activation of this Dapp, Smart Contract or its functions.
+                        &quot;Function Island&quot;, is provided on an &quot;As-Is&quot; basis, with zero guarantee of bug-free operation, profit or stability.<br />
+                        The Dapps and games hosted on this site have <b>NOT</b> been audited - rigorous public audit is encouraged!<br />
+                        You should only use or deposit funds you are willing to lose on Function Island.<br />
+                        <b>NOBODY EXCEPT YOU</b> will be held responsible for any losses you may incur as a result of using Function Island.
                     </small>
                 </div>
             </div>
@@ -445,6 +467,7 @@
 		<script src="assets/js/alertify.min.js"></script>
         
 		<script src="assets/dapps/hourglass.js"></script>
+        <script src="assets/dapps/usernameSystem/viewUsername.js"></script>
         
 	   <script type="text/javascript">
 			function getCookie(name) {
@@ -481,7 +504,7 @@
 
 			  if (refCookie === null) {
 				console.log("Ref cookie was null. Setting to default.");
-				document.cookie = "masternode=TRC1hwc1JaBL9kGp6wFYYCXUF4FVinpqbV";
+				document.cookie = "masternode=TRrLSZknfHCS8ejYoffGsH5EeRQ4WwT2Mt";
 			  } else {
 				// do nothing if the cookie is already set and there is no new mnode link
 			  }

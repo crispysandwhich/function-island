@@ -5,8 +5,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="FunctionDEX">
         <meta name="author" content="Mr Function">
-        <title>Function Island | Exchange</title>
+        <title>Function Island | Island Game</title>
 
+        <!-- Alertify CSS -->
+        <link rel="stylesheet" href="assets/css/alertify.min.css">
+        <link rel="stylesheet" href="assets/css/themes/bootstrap.min.css">
+        
         <!-- Core CSS -->
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/css/custom.css">
@@ -18,202 +22,221 @@
     </head>
 
     <body class="text-white">
-        <nav class="navbar navbar-expand-lg navbar-dark blackNavbar fixed-top">
-            <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png" width="25px" height="25px" class="rounded-circle" /> FunctionIsland</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark blackNavbar fixed-top">
+                <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png" width="25px" height="25px" class="rounded-circle" /> FunctionIsland</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-            <div class="collapse navbar-collapse" id="navbarColor03">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item"><a class="nav-link" href="divs.html"><span><i class="fas fa-hand-holding-usd text-white"></i> D1VS</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="island.html"><span><i class="fas fa-globe text-white"></i> ISLAND</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="exchange.html"><span><i class="fas fa-random text-white"></i> EXCHANGE</span></a></li>
-                </ul>
+                <div class="collapse navbar-collapse" id="navbarColor03">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item"><a class="nav-link" href="divs.html"><span><i class="fas fa-hand-holding-usd text-white"></i> D1VS</span></a></li>
+                        <li class="nav-item"><a class="nav-link" href="island.html"><span><i class="fas fa-globe text-white"></i> ISLAND</span></a></li>
+                        <li class="nav-item"><a class="nav-link" href="exchange.html"><span><i class="fas fa-random text-white"></i> EXCHANGE</span></a></li>
+                    </ul>
                 
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="https://t.me/functionisland" target="_blank"><i class="fab fa-telegram text-white"></i> <span>Telegram</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://tronscan.org/#/contract/TSEGf9jZCzLQMH2PTyF7f7NN3NfrbqHd5p" target="_blank"><i class="fas fa-search-dollar text-white"></i> <span>Contract</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://github.com/FunctionIsland" target="_blank"><i class="fab fa-github text-white"></i> <span>GitHub</span></a></li>
-                </ul>
-            </div>
-        </nav>
-        <br />
-        <br />
-        <br />
-        <br />
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-share-alt text-white"></i> Social</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="https://twitter.com/FunctionIsland"><i class="fab fa-twitter"></i> Twitter</a>
+                                <a class="dropdown-item" href="https://t.me/FunctionIsland"><i class="fab fa-telegram"></i> Telegram</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="https://discord.gg/FmCEbPU"><i class="fab fa-discord"></i> Discord</a>
+                            </div>
+                        </li>
+                        
+                        <li class="nav-item"><a class="nav-link" href="https://github.com/FunctionIsland" target="_blank"><i class="fab fa-github text-white"></i> <span>GitHub</span></a></li>
+                        <li class="nav-item"><a class="nav-link" href="names.html"><i class="fas fa-user text-white"></i> <span class="arcTag">Player</span></a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
         
-        <div id="content" class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="card glassPanel text-center">
-                        <div class="card-header">My Wallet</div>
-                        <div class="card-body">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col">
-                                        <h4>
-                                            <span class="badge badge-pill badge-danger"><span id="trxBalBuy"></span></span>
-                                        </h4>
-                                        <small>Your TRX</small>
+        <main>
+            <div class="row jumbotron glassPanel" style="margin-top: 55px;">
+                <div class="container">
+                    <div class="row text-center">
+                        <div class="col text-center">
+                            <img src="assets/img/logo.png" width="140px" height="140px" class="rounded-circle" />
+                            <h1><span>TRX / USDJ Pool</span></h1>
+                            <p class="text-white">Trade USDJ and TRX directly on Function Island</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="content" class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card glassPanel text-center">
+                            <div class="card-header">My Wallet</div>
+                            <div class="card-body">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col">
+                                            <h4>
+                                                <span class="badge badge-pill badge-danger"><span id="trxBalBuy"></span></span>
+                                            </h4>
+                                            <small>Your TRX</small>
+                                        </div>
+
+                                        <div class="col">
+                                            <h4>
+                                                <span class="badge badge-pill badge-light"><span class="USDJBalBuy"></span></span>
+                                            </h4>
+                                            <small>Your USDJ</small>
+                                        </div>
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card glassPanel text-center">
+                            <div class="card-header">Liquidity Pool</div>
+                            <div class="card-body">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col">
+                                            <h4>
+                                                <span class="badge badge-pill badge-danger"><span id="availTrxBuy" class="availableTrxBuy"></span></span>
+                                            </h4>
+                                            <small>TRX Liquidity</small>
+                                        </div>
+
+                                        <div class="col">
+                                            <h4>
+                                                <span class="badge badge-pill badge-light"><span id="availUsdBuy" class="availableUsdBuy"></span></span>
+                                            </h4>
+                                            <small>USDJ Liquidity</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+                </div>
+
+                <div id="bank" class="row">
+                    <div class="col-md-6">
+                        <div class="card glassPanel text-left">
+                            <div class="card-header">Buy USDJ</div>
+                            <div class="card-body">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <label>Send TRX</label>
+                                            <input type="number" class="form-control roundedCorners" id="bankBuyTrx" placeholder="100" value="100" maxlength="32" onkeyup="updateBankBuy(0)" onkeydown="updateBankBuy(0)" autocomplete="off" inputmode="numeric">
+                                            <p>Min. <span class="text-success">100 TRX</span></p><br />
+                                        </div>
+
+                                        <div class="col text-center">
+                                            <label>Receive USDJ</label>
+                                            <input type="number" class="form-control roundedCorners" id="bankBuyUSDJ" placeholder="10" value="10" maxlength="32" onkeyup="updateBankBuy(1)" onkeydown="updateBankBuy(1)" autocomplete="off" inputmode="numeric"><p>Incl. <span class="text-danger">2&#37; Fee</span></p><br />
+                                        </div>
                                     </div>
 
-                                    <div class="col">
-                                        <h4>
-                                            <span class="badge badge-pill badge-light"><span class="USDJBalBuy"></span></span>
-                                        </h4>
-                                        <small>Your USDJ</small>
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <small><i>(Current Rate: <span class="ourBuyRate"></span> USDJ / 1 TRX)</i></small>
+                                        </div>
                                     </div>
-                                </div> 
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <a id="buyTokensBtn" class="btn btn-lg btn-buy roundedCorners" onclick="bankBuy()" role="button">INSUFFICIENT FUNDS</a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                        <br />
                     </div>
-                    <br />
-                </div>
-                                    
-                <div class="col-md-6">
-                    <div class="card glassPanel text-center">
-                        <div class="card-header">Liquidity Pool</div>
-                        <div class="card-body">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col">
-                                        <h4>
-                                            <span class="badge badge-pill badge-danger"><span id="availTrxBuy" class="availableTrxBuy"></span></span>
-                                        </h4>
-                                        <small>TRX Liquidity</small>
+
+                    <div class="col-md-6">
+                        <div class="card glassPanel text-left">
+                            <div class="card-header">Sell USDJ</div>
+                            <div class="card-body">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <label>Send USDJ</label>
+                                            <input type="number" class="form-control roundedCorners" id="bankSellUSDJ" placeholder="10" value="10" maxlength="32" onkeyup="updateBankSell(0)" onkeydown="updateBankSell(0)" autocomplete="off" inputmode="numeric">
+                                            <p>Min. <span class="text-success">2 USDJ</span></p><br />
+                                        </div>
+
+                                        <div class="col text-center">
+                                            <label>Receive TRX</label>
+                                            <input type="number" class="form-control roundedCorners" id="bankSellTrx" placeholder="100" value="100" maxlength="32" onkeyup="updateBankSell(1)" onkeydown="updateBankSell(1)" autocomplete="off" inputmode="numeric"><p>Incl. <span class="text-danger">2&#37; Fee</span></p><br />
+                                        </div>
                                     </div>
 
-                                    <div class="col">
-                                        <h4>
-                                            <span class="badge badge-pill badge-light"><span id="availUsdBuy" class="availableUsdBuy"></span></span>
-                                        </h4>
-                                        <small>USDJ Liquidity</small>
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <small><i>(Current Rate: <span class="ourSellRate"></span> USDJ / 1 TRX)</i></small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="container">
+                                    <div id="" class="row">
+                                        <div id="approval" class="col text-center" style="display: none;">
+                                            <a class="btn btn-block btn-warning btn-lg roundedCorners" onclick="approveBank()" role="button">APPROVE</a>
+                                        </div>
+
+                                        <div class="col text-center">
+                                            <a id="sellTokensBtn" class="btn btn-lg btn-sell roundedCorners" onclick="bankSell()" role="button">SELL</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <br />
                     </div>
-                    <br />
                 </div>
-            </div>
-            
-            <div id="bank" class="row">
-                <div class="col-md-6">
-                    <div class="card glassPanel text-left">
-                        <div class="card-header">Buy USDJ</div>
-                        <div class="card-body">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col text-center">
-                                        <label>Send TRX</label>
-                                        <input type="number" class="form-control roundedCorners" id="bankBuyTrx" placeholder="100" value="100" maxlength="32" onkeyup="updateBankBuy(0)" onkeydown="updateBankBuy(0)" autocomplete="off" inputmode="numeric">
-                                        <p>Min. <span class="text-success">100 TRX</span></p><br />
-                                    </div>
-                                    
-                                    <div class="col text-center">
-                                        <label>Receive USDJ</label>
-                                        <input type="number" class="form-control roundedCorners" id="bankBuyUSDJ" placeholder="10" value="10" maxlength="32" onkeyup="updateBankBuy(1)" onkeydown="updateBankBuy(1)" autocomplete="off" inputmode="numeric"><p>Incl. <span class="text-danger">2&#37; Fee</span></p><br />
-                                    </div>
-                                </div>
-                                
-                                <div class="row">
-                                    <div class="col text-center">
-                                        <small><i>(Current Rate: <span class="ourBuyRate"></span> USDJ / 1 TRX)</i></small>
+
+                <div class="row">
+                    <div class="col text-center">
+                        <div class="card glassPanel roundedCorners">
+                            <div class="card-body">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <small><i>A 2% processing fee is applied to all exchanges of USDJ/TRX. Fees are subject to change at the Pool Owner&apos;s sole discretion.</i></small>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="card-footer">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col text-center">
-                                        <a id="buyTokensBtn" class="btn btn-lg btn-buy roundedCorners" onclick="bankBuy()" role="button">INSUFFICIENT FUNDS</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br />
-                </div>
-                
-                <div class="col-md-6">
-                    <div class="card glassPanel text-left">
-                        <div class="card-header">Sell USDJ</div>
-                        <div class="card-body">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col text-center">
-                                        <label>Send USDJ</label>
-                                        <input type="number" class="form-control roundedCorners" id="bankSellUSDJ" placeholder="10" value="10" maxlength="32" onkeyup="updateBankSell(0)" onkeydown="updateBankSell(0)" autocomplete="off" inputmode="numeric">
-                                        <p>Min. <span class="text-success">2 USDJ</span></p><br />
-                                    </div>
-                                    
-                                    <div class="col text-center">
-                                        <label>Receive TRX</label>
-                                        <input type="number" class="form-control roundedCorners" id="bankSellTrx" placeholder="100" value="100" maxlength="32" onkeyup="updateBankSell(1)" onkeydown="updateBankSell(1)" autocomplete="off" inputmode="numeric"><p>Incl. <span class="text-danger">2&#37; Fee</span></p><br />
-                                    </div>
-                                </div>
-                                
-                                <div class="row">
-                                    <div class="col text-center">
-                                        <small><i>(Current Rate: <span class="ourSellRate"></span> USDJ / 1 TRX)</i></small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="container">
-                                <div id="" class="row">
-                                    <div id="approval" class="col text-center" style="display: none;">
-                                        <a class="btn btn-block btn-warning btn-lg roundedCorners" onclick="approveBank()" role="button">APPROVE</a>
-                                    </div>
-                                    
-                                    <div class="col text-center">
-                                        <a id="sellTokensBtn" class="btn btn-lg btn-sell roundedCorners" onclick="bankSell()" role="button">SELL</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br />
-                </div>
-            </div>
-            
-            <div class="row">
-                <div class="col text-center">
-                    <div class="card glassPanel roundedCorners">
-                        <div class="card-body">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col text-center">
-                                        <small><i>A 2% processing fee is applied to all exchanges of USDJ/TRX. Fees are subject to change at the Pool Owner&apos;s sole discretion.</i></small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <br />
                     </div>
                 </div>
             </div>
-            <br />
-        </div>
+        </main>
         
         <footer class="py-5 px-5 glassPanel rcTop text-white">
             <div class="row">
                 <div class="col text-center">
-                    <b>The Fine Print</b>
+                    <b>Terms of Use</b>
                     <small class="d-block mb-3 text-white">
-                        Function Island, its connected Smart Contract and its dependencies &amp; productions are provided on an &quot;as-is&quot; basis, with zero guarantee of bug-free operation.<br />
-                        Only use this Dapp if you can trust its code - Developers, maintainers, contributors, participants or representatives will <b>NOT</b> be held responsible<br />
-                        for losses resulting in any action taken by you, involving the use or activation of this Dapp, Smart Contract or its functions.
+                        &quot;Function Island&quot;, is provided on an &quot;As-Is&quot; basis, with zero guarantee of bug-free operation, profit or stability.<br />
+                        The Dapps and games hosted on this site have <b>NOT</b> been audited - rigorous public audit is encouraged!<br />
+                        You should only use or deposit funds you are willing to lose on Function Island.<br />
+                        <b>NOBODY EXCEPT YOU</b> will be held responsible for any losses you may incur as a result of using Function Island.
                     </small>
                 </div>
             </div>
         </footer>
-        
-        <br />
-        <br />
-        
+
         <!-- Bottom Nav -->
         <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark" style="background-color: rgba(0,0,0,1);">
             <ul class="navbar-nav mr-auto ml-auto">
@@ -222,57 +245,14 @@
             </ul>
         </nav>
         
-        <div class="modal" id="usernameModal">
-            <div class="modal-dialog">
-                <div class="modal-content bg-dark roundedCorners greenBorder">
-                    <div class="modal-header"><h4 class="modal-title text-success">Register a Username</h4></div>
-                    <div class="modal-body">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col text-left">
-                                    <h3 class="text-white"></h3>
-                                    <label class="text-white">Enter a name: </label>
-                                    <input type="text" name="newUsername" id="newUsername" onchange="checkAvailability()" class="form-control roundedCorners" placeholder="Enter your desired Username" />
-                                    <p class="text-white text-center"><b>Max. 12 Letters/numbers, no spaces! Change to another available tag at any time for another 10 TRX!</b></p>
-                                    <br />
-                                    Username Available: <span id="availableStatus" class="text-white"></span>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col text-center">
-                                    <button onclick="checkAvailability()" class="btn btn-block btn-md btn-warning roundedCorners">Check Availability</button><br />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <h3 class="text-white">What is a Username?</h3>
-                                <p class="text-white">
-                                    Your username is your personal tag, across all of Function Island - the single piece of identity that is tied to your wallet address - your greatest online handle. Make it a good one!<br />
-                                    <br />
-                                    Registering an Username costs <b>10 TRX</b> - a small fee to prevent namesquatting, which is collected by the Core Developer Team for maintenance of the platform.
-                                </p>
-                            </div>
-                            <div id="registerButtonArea" class="row" style="display: none;">
-                                <div class="col text-center">
-                                    <button onclick="registerName()" class="btn btn-block btn-md btn-success roundedCorners">Register</button>
-                                </div>
-                            </div>
-                            <br />
-                        </div>
-                    </div>
-                    <div class="modal-footer text-white">
-                        <button type="button" class="btn btn-danger roundedCorners" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
         <!-- Bootstrap core JavaScript -->
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/popper.min.js"></script>
-        <script src="assets/js/bootstrap.min.js"></script>
+		<script src="assets/js/bootstrap.min.js"></script>
+		<script src="assets/js/alertify.min.js"></script>
         <script src="assets/js/tronweb.js"></script>
         
         <script src="assets/dapps/exchange.js"></script>
-        <script src="assets/dapps/username.js"></script>
+        <script src="assets/dapps/usernameSystem/viewUsername.js"></script>
     </body>
 </html>

@@ -5,10 +5,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="FunctionDEX">
         <meta name="author" content="Mr Function">
-        <title>Function Island | Home</title>
+        <title>Function Island | Island Game</title>
 
-        <!-- Core CSS -->
+        <!-- Alertify CSS -->
         <link rel="stylesheet" href="assets/css/alertify.min.css">
+        <link rel="stylesheet" href="assets/css/themes/bootstrap.min.css">
+        
+        <!-- Core CSS -->
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/css/custom.css">
         
@@ -18,167 +21,184 @@
         <script src="https://kit.fontawesome.com/f352960784.js" crossorigin="anonymous"></script>
     </head>
 
-    <body>
-        <nav class="navbar navbar-expand-lg navbar-dark blackNavbar fixed-top">
-            <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png" width="25px" height="25px" class="rounded-circle" /> FunctionIsland</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+    <body class="text-white">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark blackNavbar fixed-top">
+                <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png" width="25px" height="25px" class="rounded-circle" /> FunctionIsland</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-            <div class="collapse navbar-collapse" id="navbarColor03">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item"><a class="nav-link" href="divs.html"><span><i class="fas fa-hand-holding-usd text-white"></i> D1VS</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="island.html"><span><i class="fas fa-globe text-white"></i> ISLAND</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="exchange.html"><span><i class="fas fa-random text-white"></i> EXCHANGE</span></a></li>
-                    
-                </ul>
+                <div class="collapse navbar-collapse" id="navbarColor03">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item"><a class="nav-link" href="divs.html"><span><i class="fas fa-hand-holding-usd text-white"></i> D1VS</span></a></li>
+                        <li class="nav-item"><a class="nav-link" href="island.html"><span><i class="fas fa-globe text-white"></i> ISLAND</span></a></li>
+                        <li class="nav-item"><a class="nav-link" href="exchange.html"><span><i class="fas fa-random text-white"></i> EXCHANGE</span></a></li>
+                    </ul>
                 
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="https://t.me/functionisland" target="_blank"><i class="fab fa-telegram text-white"></i> <span>Telegram</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://github.com/FunctionIsland" target="_blank"><i class="fab fa-github text-white"></i> <span>GitHub</span></a></li>
-                </ul>
-            </div>
-        </nav>
-
-        <div class="row text-white jumbotron glassPanel rcBottom" style="margin-top: 55px;">
-            <div class="col text-center">
-                <h1>Island Game</h1>
-                <p>Earn TRX as you buy, sell &amp; convert Resources into Power!</p>
-            </div>
-        </div>
-        
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 text-center">
-                    <div class="card text-white glassPanel roundedCorners">
-                        <div class="card-body">
-                            <h2><span id="contractBal">0</span> TRX</h2>
-                            <small>Game Liquidity</small>
-                        </div>
-                    </div>
-                    <br />
-                </div>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-share-alt text-white"></i> Social</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="https://twitter.com/FunctionIsland"><i class="fab fa-twitter"></i> Twitter</a>
+                                <a class="dropdown-item" href="https://t.me/FunctionIsland"><i class="fab fa-telegram"></i> Telegram</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="https://discord.gg/FmCEbPU"><i class="fab fa-discord"></i> Discord</a>
+                            </div>
+                        </li>
                         
-                        <div class="col-md-6 text-center">
-                            <div class="card text-white glassPanel roundedCorners">
-                                <div class="card-body">
-                                    <h2><span id="timeuntilfull">?</span></h2>
-                                    <small>until Island Resources are full</small>
-                                </div>
-                            </div>
-                            <br />
+                        <li class="nav-item"><a class="nav-link" href="https://github.com/FunctionIsland" target="_blank"><i class="fab fa-github text-white"></i> <span>GitHub</span></a></li>
+                        <li class="nav-item"><a class="nav-link" href="names.html"><i class="fas fa-user text-white"></i> <span class="arcTag">Player</span></a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <div class="row jumbotron glassPanel" style="margin-top: 55px;">
+                <div class="container">
+                    <div class="row text-center">
+                        <div class="col text-center">
+                            <img src="assets/img/logo.png" width="140px" height="140px" class="rounded-circle" />
+                            <h1><span>Island Game</span></h1>
+                            <p class="text-white">Buy, Generate, Convert &amp; Sell Power / Resources with TRX!</p>
                         </div>
                     </div>
-                    
-                    <div class="row">
-                        <div class="col-md-4 text-center">
-                            <div class="card text-white glassPanel roundedCorners">
-                                <div class="card-header text-left">My Power</div>
-                                <div class="card-body">
-                                    <h5 class="text-light"><b><i class="fas fa-bolt"></i> <span class="numislandpower">0</span></b> <small><i>(&#43;<span class="production">0</span>/hr)</i></small></h5>
-                                    <small>Island Power</small>
-                                </div>
-                                <div class="card-footer">
-                                    <a class="btn btn-block btn-md btn-warning" onclick="convertIslandResources1(displayTransactionMessage)" role="button">Grow (+<span id="convertislandpowerquantity">?</span>)</a>
+                </div>
+            </div>
+            
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center">
+                        <div class="card text-white glassPanel roundedCorners">
+                            <div class="card-body">
+                                <h2><span id="contractBal">0</span> TRX</h2>
+                                <small>Game Liquidity</small>
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+                        
+                    <div class="col-md-6 text-center">
+                        <div class="card text-white glassPanel roundedCorners">
+                            <div class="card-body">
+                                <h2><span id="timeuntilfull">?</span></h2>
+                                <small>until Island Resources are full</small>
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-4 text-center">
+                        <div class="card text-white glassPanel roundedCorners">
+                            <div class="card-header text-left">Buy Resources</div>
+                            <div class="card-body">
+                                <div class="input-group mb-3">
+                                    <input type="number" class="form-control" aria-label="min. 10 TRX" id="trxtospend" value="10" step="1" onchange="updateBuyPrice()">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">TRX</span>
+                                    </div>
                                 </div>
                             </div>
-                            <br />
-                        </div> 
+                            <div class="card-footer">
+                                <button class="btn btn-block btn-md btn-success" onclick="buyIslandResources2()"  role="button">Buy <span id="islandresourcestobuy">?</span></button>
+                            </div>
+                        </div>
+                        <br />
+                    </div>
                     
-                        <div class="col-md-4 text-center">
-                            <div class="card text-white glassPanel roundedCorners">
-                                <div class="card-header text-left">Buy Resources</div>
-                                <div class="card-body">
-                                    <div class="input-group mb-3">
-                                        <input type="number" class="form-control" aria-label="min. 10 TRX" id="trxtospend" value="10" step="1" onchange="updateBuyPrice()">
-                                        <div class="input-group-append">
-                                            <span class="input-group-text">TRX</span>
+                    <div class="col-md-4 text-center">
+                        <div class="card text-white glassPanel roundedCorners">
+                            <div class="card-header text-left">My Power</div>
+                            <div class="card-body">
+                                <h5 class="text-light"><b><i class="fas fa-bolt"></i> <span class="numislandpower">0</span></b> <small><i>(&#43;<span class="production">0</span>/hr)</i></small></h5>
+                                <small>Island Power</small>
+                            </div>
+                            <div class="card-footer">
+                                <a class="btn btn-block btn-md btn-warning" onclick="convertIslandResources1(displayTransactionMessage)" role="button">Grow (+<span id="convertislandpowerquantity">?</span>)</a>
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+                    
+                    <div class="col-md-4 text-center">
+                        <div class="card text-white glassPanel roundedCorners">
+                            <div class="card-header text-left">My Resources</div>
+                            <div class="card-body">
+                                <h5 class="text-light"><i class="fas fa-gem"></i> <b><span class="numislandresources">0</span></b></h5>
+                                <small>Island Resources</small>
+                            </div>
+                            <div class="card-footer">
+                                <a class="btn btn-block btn-md btn-danger" onclick="sellIslandResources(displayTransactionMessage)"  role="button">Sell for <span id="sellprice">?</span> TRX</a>
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card text-white glassPanel roundedCorners">
+                            <div class="card-body">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col text-white text-left">
+                                            <h3>1. Buy Resources</h3>
+                                            <p>You will need to buy Resources with TRX to start your island - convert them into Island Power, and you&apos;ll start generating more Island Resources at a faster rate!</p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card-footer">
-                                    <button class="btn btn-block btn-md btn-success" onclick="buyIslandResources2()"  role="button">Buy <span id="islandresourcestobuy">?</span></button>
-                                </div>
                             </div>
-                            <br />
                         </div>
-                    
-                        <div class="col-md-4 text-center">
-                            <div class="card text-white glassPanel roundedCorners">
-                                <div class="card-header text-left">My Resources</div>
-                                <div class="card-body">
-                                    <h5 class="text-light"><i class="fas fa-gem"></i> <b><span class="numislandresources">0</span></b></h5>
-                                    <small>Island Resources</small>
-                                </div>
-                                <div class="card-footer">
-                                    <a class="btn btn-block btn-md btn-danger" onclick="sellIslandResources(displayTransactionMessage)"  role="button">Sell for <span id="sellprice">?</span> TRX</a>
-                                </div>
-                            </div>
-                            <br />
-                        </div>
+                        <br />
                     </div>
-            
-            <hr />
-            
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card text-white glassPanel roundedCorners">
-                        <div class="card-body">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col text-white text-left">
-                                        <h3>1. Buy Resources</h3>
-                                        <p>You will need to buy Resources with TRX to start your island - convert them into Island Power, and you&apos;ll start generating more Island Resources!</p>
+
+                    <div class="col-md-4">
+                        <div class="card text-white glassPanel roundedCorners">
+                            <div class="card-body">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col text-white text-left">
+                                            <h3>2. Convert Resources</h3>
+                                            <p>Convert your generated Island Resources into more Island Power, and generate more resources faster! Converting frequently compounds your earnings!</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <br />
                     </div>
-                    <br />
-                </div>
                 
-                <div class="col-md-4">
-                    <div class="card text-white glassPanel roundedCorners">
-                        <div class="card-body">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col text-white text-left">
-                                        <h3>2. Convert Resources</h3>
-                                        <p>Convert your generated Island Resources into more Island Power, and generate more resources faster! Converting frequently compounds your earnings!</p>
+                    <div class="col-md-4">
+                        <div class="card text-white glassPanel roundedCorners">
+                            <div class="card-body">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col text-white text-left">
+                                            <h3>3. Sell Resources</h3>
+                                            <p>When you&apos;re generating lots of resources, you can sell them for TRX! You retain your power, but your generation starts again - Be sure to sell carefully!</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <br />
                     </div>
-                    <br />
-                </div>
-                
-                <div class="col-md-4">
-                    <div class="card text-white glassPanel roundedCorners">
-                        <div class="card-body">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col text-white text-left">
-                                        <h3>3. Sell Resources</h3>
-                                        <p>When you&apos;re generating lots of resources, you can sell them for TRX! You retain your power, but your generation starts again - Be sure to sell carefully!</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br />
                 </div>
             </div>
-        </div>
+        </main>
         
         <footer class="py-5 px-5 glassPanel rcTop text-white">
             <div class="row">
                 <div class="col text-center">
-                    <b>The Fine Print</b>
+                    <b>Terms of Use</b>
                     <small class="d-block mb-3 text-white">
-                        Function Island, its connected Smart Contract and its dependencies &amp; productions are provided on an &quot;as-is&quot; basis, with zero guarantee of bug-free operation.<br />
-                        Only use this Dapp if you can trust its code - Developers, maintainers, contributors, participants or representatives will <b>NOT</b> be held responsible<br />
-                        for losses resulting in any action taken by you, involving the use or activation of this Dapp, Smart Contract or its functions.
+                        &quot;Function Island&quot;, is provided on an &quot;As-Is&quot; basis, with zero guarantee of bug-free operation, profit or stability.<br />
+                        The Dapps and games hosted on this site have <b>NOT</b> been audited - rigorous public audit is encouraged!<br />
+                        You should only use or deposit funds you are willing to lose on Function Island.<br />
+                        <b>NOBODY EXCEPT YOU</b> will be held responsible for any losses you may incur as a result of using Function Island.
                     </small>
                 </div>
             </div>
@@ -192,16 +212,23 @@
             </ul>
         </nav>
         
-        <div id="myModal" class="modal">
-            <!-- Modal content -->
-            <div class="modal-content">
-                <!--<span class="close">&times;</span>-->
-                <div id="modal-internal"></div>
+        <div class="modal" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div id="modal-internal"></div>
+                </div>
             </div>
         </div>
         
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/popper.min.js"></script>
+		<script src="assets/js/bootstrap.min.js"></script>
+		<script src="assets/js/alertify.min.js"></script>
+        
         <script src="assets/dapps/islandGame/interface.js"></script>
         <script src="assets/dapps/islandGame/main.js"></script>
+        
+        <script src="assets/dapps/usernameSystem/viewUsername.js"></script>
         <script>main()</script>
     </body>
 </html>

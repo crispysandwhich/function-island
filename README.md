@@ -1,10 +1,10 @@
 # Function Island
-Function Island | Open Source Dapps
+Function Island | Open Source Dapps and Games on TRON
 
 ![Function Island Homepage](/screenshots/home_1.png)
 
 ## Introduction
-Function Island is a collection of Open Source Dapps, with Smart Contracts deployed on the TRON network. It is a "just-for-fun" platform, aiming to make a fun experience of cryptocurrency trading and management. Anyone is able to use the software properly by installing a TRON Blockchain Wallet Extension or Dapp Browser, such as TronLink or TronWallet.me.
+Function Island is a collection of Open Source Dapps, with Smart Contracts deployed on the TRON network. It is a "just-for-fun" platform, aiming to make a fun experience of cryptocurrency trading and management. Anyone is able to use the software properly by installing a TRON Blockchain Wallet Extension or Dapp Browser, such as TronLink or TronWallet.me. There is also an instance of this composition hosted at https://functionisland.xyz - everyone is encouraged to fork the front-end and decentralise the project further!
 
 ## Included Dapps
 ### D1VS Game
@@ -17,13 +17,10 @@ D1VS is an Hourglass "Proof of Weak Hands" game, with 10% Buy/Sell Fees, and 3% 
  
 The USDJ Exchange enables quick and easy trade between TRX and USDJ, right on Function Island! Every trade is met with a 2% fee, which goes directly towards maintenance of the Function Island platform.
  
-### Username
+### FunctionNamesContract
  - Contract Address: TZ27Uae32vbz1WshKygJU37dPPrvtVPAr4
  
-Username is an interface and contract pairing added to Function Island, to give you that *extra* little bit of personalisation whenever you use the Dapps. 10 TRX gets you your name right at the top of the page (under "Function Island")!
-
-## Contribution
-If you would like to contribute to Function Island, feel free to make a Pull Request! Maintainers and the core team will review any requests, and work with authors / requestors to create stronger platform integration where such is determined beneficial for the Function Island project.
+FunctionNamesContract is an interface and contract pairing added to Function Island, enabling users to set and change a Username for their address when their wallet is unlocked and enabled on the website.
 
 ## Credits
  - Yet to be established, but there's probably a long line of people...

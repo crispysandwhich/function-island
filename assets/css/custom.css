@@ -9,24 +9,36 @@ body {
 }
 
 .glassPanel {
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.75);
 }
 
 .blackNavbar {
     background-color: #000;
 }
 
-.greenBorder {
-    border: 1px solid #02d102;
-}
+.redBorder {border: solid #ff004e;}
+.silverBorder {border: solid #b4b4b4;}
+.orangeBorder {border: solid #e26714;}
+.blueBorder {border: solid #009dff;}
+.greenBorder {border: solid #00ff62;}
+.yellowBorder {border: solid #fff500;}
+.whiteBorder {border: solid #ffffff;}
 
-.redBorder {
-    border: 1px solid #d90000;
-}
+/* Rounded Corner FX */
+/* 0,0,0,0 - top left, top right, bottom right, bottom left */
+.rcTopLeft      {border-radius: 10px  0px  0px  0px;}
+.rcTopRight     {border-radius:  0px 10px  0px  0px;}
+.rcBottomLeft   {border-radius:  0px  0px  0px 10px;}
+.rcBottomRight  {border-radius: 10px  0px 10px  0px;}
 
-.whiteBorder {
-    border: 1px solid #fff;
-}
+.rcTop          {border-radius: 10px 10px  0px  0px;}
+.rcBottom       {border-radius:  0px  0px 10px 10px;}
+
+.rcLeft         {border-radius: 10px  0px  0px 10px;}
+.rcRight        {border-radius:  0px 10px 10px  0px;}
+
+.roundedCorners {border-radius: 10px 10px 10px 10px;}
+.rcNone         {border-radius:  0px  0px  0px  0px;}
 
 @keyframes gradient {
 	0% {

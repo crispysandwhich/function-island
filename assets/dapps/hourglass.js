@@ -113,9 +113,9 @@ window.addEventListener("load",function() {
     });
     $("#makeItRainTx").click(function(){
         rainmakerContract.makeItRain().send().then((result)=>{
-            alertify.success('Activating Rainmaker, Please Wait...')
+            alertify.success('Raising Pricefloor...')
     }).catch((error)=>{
-            alertify.error('Activating Rainmaker Failed');
+            alertify.error('Raising Pricefloor Failed');
             console.log(error)
         })
     });

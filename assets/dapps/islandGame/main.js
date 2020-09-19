@@ -49,8 +49,7 @@ function stripDecimals(str, num){
 
 function numberWithCommas(x) {return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");} 
 function formatIslandResources(islandresources){return translateQuantity(islandresources/islandresourcestoconvert1)}
-function removeModal2(){$('#adModal').modal('toggle');}
-function displayTransactionMessage(){displayModalMessage("Transaction Submitted")}
+function displayTransactionMessage(){alertify.success("Transaction Submitted")}
 function weiToDisplay(trxprice){return formatTrxValue(tronWeb.toSun(trxprice))}
 function formatTrxValue(trxstr){return parseFloat(parseFloat(trxstr).toFixed(5));}
 function onlyLetters(text){return text.replace(/[^0-9a-zA-Z\s\.!?,]/gi, '')}
@@ -166,17 +165,6 @@ function translateQuantity(quantity,precision){
     }
     if(precision==0){finalquantity=Math.floor(finalquantity)}
     return finalquantity.toFixed(precision)+modifier;
-}
-
-function removeModal(){
-    modalContent.innerHTML=""
-    modal.style.display = "none";
-}
-
-function displayModalMessage(message){
-    modal.style.display = "block";
-    modalContent.textContent=message;
-    setTimeout(removeModal,3000)
 }
 
 function getQueryVariable(variable) {

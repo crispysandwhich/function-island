@@ -7,8 +7,11 @@
         <meta name="author" content="Mr Function">
         <title>Function Island | Home</title>
 
-        <!-- Core CSS -->
+        <!-- Alertify CSS -->
         <link rel="stylesheet" href="assets/css/alertify.min.css">
+        <link rel="stylesheet" href="assets/css/themes/bootstrap.min.css">
+        
+        <!-- Core CSS -->
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/css/custom.css">
         
@@ -19,33 +22,40 @@
     </head>
     
     <body class="text-white">
-        <nav class="navbar navbar-expand-lg navbar-dark blackNavbar fixed-top">
-            <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png" width="25px" height="25px" class="rounded-circle" /> FunctionIsland</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark blackNavbar fixed-top">
+                <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png" width="25px" height="25px" class="rounded-circle" /> FunctionIsland</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-            <div class="collapse navbar-collapse" id="navbarColor03">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item"><a class="nav-link" href="divs.html"><span><i class="fas fa-hand-holding-usd text-white"></i> D1VS</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="island.html"><span><i class="fas fa-globe text-white"></i> ISLAND</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="exchange.html"><span><i class="fas fa-random text-white"></i> EXCHANGE</span></a></li>
-                    
-                </ul>
+                <div class="collapse navbar-collapse" id="navbarColor03">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item"><a class="nav-link" href="divs.html"><span><i class="fas fa-hand-holding-usd text-white"></i> D1VS</span></a></li>
+                        <li class="nav-item"><a class="nav-link" href="island.html"><span><i class="fas fa-globe text-white"></i> ISLAND</span></a></li>
+                        <li class="nav-item"><a class="nav-link" href="exchange.html"><span><i class="fas fa-random text-white"></i> EXCHANGE</span></a></li>
+                    </ul>
                 
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="https://t.me/functionisland" target="_blank"><i class="fab fa-telegram text-white"></i> <span>Telegram</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://github.com/FunctionIsland" target="_blank"><i class="fab fa-github text-white"></i> <span>GitHub</span></a></li>
-                </ul>
-            </div>
-        </nav>
-        <br />
-        <br />
-        <br />
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-share-alt text-white"></i> Social</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="https://twitter.com/FunctionIsland"><i class="fab fa-twitter"></i> Twitter</a>
+                                <a class="dropdown-item" href="https://t.me/FunctionIsland"><i class="fab fa-telegram"></i> Telegram</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="https://discord.gg/FmCEbPU"><i class="fab fa-discord"></i> Discord</a>
+                            </div>
+                        </li>
+                        
+                        <li class="nav-item"><a class="nav-link" href="https://github.com/FunctionIsland" target="_blank"><i class="fab fa-github text-white"></i> <span>GitHub</span></a></li>
+                        <li class="nav-item"><a class="nav-link" href="names.html"><i class="fas fa-user text-white"></i> <span class="arcTag">Player</span></a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
         
-        <div class="container">
-            <br />
-            <div class="row jumbotron glassPanel">
+        <main>
+            <div class="row jumbotron glassPanel" style="margin-top: 55px;">
                 <div class="container">
                     <div class="row text-center">
                         <div class="col text-center">
@@ -57,76 +67,76 @@
                 </div>
             </div>
             
-            <div class="row">
-                <div class="col text-center">
-                    <span class="zoom"><a href="divs.html"><img class="imgButton" src="assets/img/dollar.png" width="200px" height="200px" /></a></span><br />
-                    <h3>Play D1VS</h3>
-                    <p>D1VS is an Hourglass game, with 10&#37; Dividend fees on every Buy and Sell. Earn some Dividends today!</p>
+            <div class="container">
+                <div class="row">
+                    <div class="col text-center">
+                        <span class="zoom"><a href="divs.html"><img class="imgButton" src="assets/img/dollar.png" width="200px" height="200px" /></a></span><br />
+                        <h3>Play D1VS</h3>
+                        <p>D1VS is an Hourglass game, with 10&#37; Dividend fees on every Buy and Sell. Earn some Dividends today!</p>
+                    </div>
+
+                    <div class="col text-center">
+                        <span class="zoom"><a href="island.html"><img class="imgButton" src="assets/img/island.png" width="200px" height="200px" /></a></span><br />
+                        <h3>Island Power</h3>
+                        <p>Buy, Sell &amp; Convert Resources into Power, and earn TRX! More Power generates Resources Faster!</p>
+                    </div>
+
+                    <div class="col text-center">
+                        <span class="zoom"><a href="exchange.html"><img class="imgButton" src="assets/img/swap.png" width="200px" height="200px" /></a></span><br />
+                        <h3>Swap TRX/USDJ</h3>
+                        <p>Need TRX or USDJ? Trade the pair on Function Island, with only 2&#37; trading fees to support project development!</p>
+                    </div>
                 </div>
                 
-                <div class="col text-center">
-                    <span class="zoom"><a href="island.html"><img class="imgButton" src="assets/img/island.png" width="200px" height="200px" /></a></span><br />
-                    <h3>Resources &#61; Power?</h3>
-                    <p>Buy, Sell &amp; Convert Resources into Power, and earn TRX! More Power generates Resources Faster!</p>
-                </div>
+                <hr />
                 
-                <div class="col text-center">
-                    <span class="zoom"><a href="exchange.html"><img class="imgButton" src="assets/img/swap.png" width="200px" height="200px" /></a></span><br />
-                    <h3>Swap TRX/USDJ</h3>
-                    <p>Need TRX or USDJ? Trade the pair on Function Island, with only 2&#37; trading fees to support project development!</p>
-                </div>
-            </div>
-            
-            <hr />
-            
-            <div class="row">
-                <div class="col text-center">
-                    <div class="card glassPanel roundedCorners">
-                        <div class="card-header text-center">What is Function Island?</div>
-                        <div class="card-body">
-                            <div class="container">
+                <div class="row">
+                    <div class="col text-center">
+                        <div class="card glassPanel roundedCorners">
+                            <div class="card-header text-center">What is Function Island?</div>
+                            <div class="card-body">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <p>
+                                            Function Island is a platform which promotes Open-Source development of decentralised applications on the TRON Blockchain.<br />
+                                            It is maintained by &quot;Mr Function&quot;, and is a creation <i>of and for fun</i>.<br />
+                                            <br />
+                                            Function Island has a Telegram chat, which anyone is welcome to join and participate in - everyone is already waiting for you...<br />
+                                            <br />
+                                            <i>...so what are you waiting for?</i>
+                                        </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
                                 <div class="row">
                                     <div class="col text-center">
-                                        <p>
-                                        Function Island is a platform which promotes Open-Source development of decentralised applications on the TRON Blockchain.<br />
-                                        It is maintained by &quot;Mr Function&quot;, and is a creation <i>of and for fun</i>.<br />
-                                        <br />
-                                        Function Island has a Telegram chat, which anyone is welcome to join and participate in - everyone is already waiting for you...<br />
-                                        <br />
-                                        <i>...so what are you waiting for?</i>
-                                    </p>
+                                        <a href="https://t.me/functionisland" target="_blank" class="btn btn-block btn-md btn-light">Join Function Island</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="card-footer">
-                            <div class="row">
-                                <div class="col text-center">
-                                    <a href="https://t.me/functionisland" target="_blank" class="btn btn-block btn-md btn-light">Join Function Island</a>
-                                </div>
-                            </div>
-                        </div>
+                        <br />
                     </div>
                 </div>
             </div>
-        </div>
-        <br />
-        
+        </main>
+
         <footer class="py-5 px-5 glassPanel rcTop text-white">
             <div class="row">
                 <div class="col text-center">
-                    <b>The Fine Print</b>
+                    <b>Terms of Use</b>
                     <small class="d-block mb-3 text-white">
-                        Function Island, its connected Smart Contract and its dependencies &amp; productions are provided on an &quot;as-is&quot; basis, with zero guarantee of bug-free operation.<br />
-                        Only use this Dapp if you can trust its code - Developers, maintainers, contributors, participants or representatives will <b>NOT</b> be held responsible<br />
-                        for losses resulting in any action taken by you, involving the use or activation of this Dapp, Smart Contract or its functions.
+                        &quot;Function Island&quot;, is provided on an &quot;As-Is&quot; basis, with zero guarantee of bug-free operation, profit or stability.<br />
+                        The Dapps and games hosted on this site have <b>NOT</b> been audited - rigorous public audit is encouraged!<br />
+                        You should only use or deposit funds you are willing to lose on Function Island.<br />
+                        <b>NOBODY EXCEPT YOU</b> will be held responsible for any losses you may incur as a result of using Function Island.
                     </small>
                 </div>
             </div>
         </footer>
-        
-        <br />
-        <br />
         
         <!-- Bottom Nav -->
         <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark" style="background-color: rgba(0,0,0,1);">
@@ -140,5 +150,7 @@
         <script src="assets/js/popper.min.js"></script>
 		<script src="assets/js/bootstrap.min.js"></script>
 		<script src="assets/js/alertify.min.js"></script>
+        
+        <script src="assets/dapps/usernameSystem/viewUsername.js"></script>
     </body>
 </html>
