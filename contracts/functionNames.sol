@@ -28,7 +28,7 @@ contract FunctionNameContract {
         return true;
     }
 
-    // Register
+    // Register a name for your own address - you pay the fee, you get the name.
     function registerName(string memory name) public payable returns (bool _success) {
         require(msg.value == namePrice());
         require(bytes(name).length <= 32, "name must be fewer than 32 bytes");
@@ -40,6 +40,21 @@ contract FunctionNameContract {
         addressNameMap[msg.sender] = name;
         nameAddressMap[name] = msg.sender;
         emit Register(msg.sender, name);
+        return true;
+    }
+    
+    // Register a name for another address - you pay the fee, they get the name.
+    function registerNameFor(address _for, string memory name) public payable returns (bool _success) {
+        require(msg.value == namePrice());
+        require(bytes(name).length <= 32, "name must be fewer than 32 bytes");
+        require(bytes(name).length >= 3, "name must be more than 3 bytes");
+        require(checkCharacters(bytes(name)));
+        require(nameAddressMap[name] == address(0), "name in use");
+        string memory oldName = addressNameMap[_for];
+        if (bytes(oldName).length > 0) {nameAddressMap[oldName] = address(0);}
+        addressNameMap[_for] = name;
+        nameAddressMap[name] = _for;
+        emit Register(_for, name);
         return true;
     }
     
