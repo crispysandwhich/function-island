@@ -1,8 +1,7 @@
 var tronWeb;
 var currentAddr;
 var bankContract;
-
-window.onload = function() {
+window.addEventListener('load', async function() {
     if (!window.tronWeb) {
         const HttpProvider = TronWeb.providers.HttpProvider;
         const fullNode = new HttpProvider('https://api.trongrid.io');
@@ -11,25 +10,62 @@ window.onload = function() {
 
         const tronWeb = new TronWeb(fullNode, solidityNode, eventServer,);
         window.tronWeb = tronWeb;
+        
+        tronWeb = window.tronWeb;
+        bankContract = await tronWeb.contract().at("TSEGf9jZCzLQMH2PTyF7f7NN3NfrbqHd5p");
+
+        currentAddr = tronWeb.defaultAddress['base58'];
+        console.log(currentAddr);
     }
-    once();
-};
+    setTimeout(setup, 2000)
+})
 
-async function once() {
-    tronWeb = window.tronWeb;
-    bankContract = await tronWeb.contract().at("TSEGf9jZCzLQMH2PTyF7f7NN3NfrbqHd5p");
-
-    currentAddr = tronWeb.defaultAddress['base58'];
-    console.log(currentAddr);
-          
-    setTimeout(function() {}, 2000);
-    setInterval(function() {main();}, 2000);
-}
-
-function main() {
-    _bankDetails();
-    _checkPayback();
-    _checkPaid();
+function setup() {
+    bankContract.bankData().call().then(result => {
+        var trxBalance = result.tronBal/1e6;
+        var tknBalance = result.tokenBal/1e18;
+        var bankStatus = result.closed;
+        if (bankStatus = "false") {
+            $("#operationStatus").text("Open");
+            document.getElementById("operationStatus").className = "text-success";
+        } else {
+            $("#operationStatus").text("Closed");
+            document.getElementById("operationStatus").className = "text-danger";
+        }
+        $("#trx-balance").text(trxBalance.toFixed(0));
+        $("#tkn-balance").text(tknBalance.toFixed(2));
+    }).catch((err) => {
+        console.log(err)
+    });
+    
+    // Fee percentage
+    bankContract.feePercentage().call().then(result => {
+        $(".fee-percentage").text(result + '% per Trade');
+        document.getElementsByClassName("fee-percentage").className = "text-white";
+    }).catch((err) => {
+        console.log(err)
+    })
+    
+    var totalOwed = $("#liquidityContributed").val();
+    var totalPaid = $("#returnsPaid").val();
+    var remaining = totalOwed - totalPaid / 1e18;
+    $("#remaining").text('You are owed' + remaining);
+    
+    bankContract.payback().call().then(result => {
+        var owedAmount = (result / 1e18).toFixed(2);
+        $("#liquidityContributed").text('$' + owedAmount);
+        document.getElementById("liquidityContributed").className = "text-success";
+    }).catch((err) => {
+        console.log(err)
+    });
+    
+    bankContract.paid().call().then(result => {
+        var paidAmount = (result / 1e18).toFixed(2);
+        $("#returnsPaid").text('$' + paidAmount);
+        document.getElementById("returnsPaid").className = "text-danger";
+    }).catch((err) => {
+        console.log(err)
+    });
 }
 
 function depositTRX() {
@@ -84,58 +120,4 @@ function toggleBank() {
     }).catch((err) => {
         console.log(err)
     });
-}
-
-// What the admin is owed
-function _checkPayback() {
-    bankContract.payback().call().then(result => {
-        var owedAmount = (result / 1e18).toFixed(2);
-        $("#liquidityContributed").text('$' + owedAmount);
-        document.getElementById("liquidityContributed").className = "text-success";
-    }).catch((err) => {
-        console.log(err)
-    });
-}
-
-// What's been paid to the admin
-function _checkPaid() {
-    bankContract.paid().call().then(result => {
-        var paidAmount = (result / 1e18).toFixed(2);
-        $("#returnsPaid").text('$' + paidAmount);
-        document.getElementById("returnsPaid").className = "text-danger";
-    }).catch((err) => {
-        console.log(err)
-    });
-}
-
-function _bankDetails() {
-    bankContract.bankData().call().then(result => {
-        var trxBalance = result.tronBal/1e6;
-        var tknBalance = result.tokenBal/1e18;
-        var bankStatus = result.closed;
-        if (bankStatus = "false") {
-            $("#operationStatus").text("Open");
-            document.getElementById("operationStatus").className = "text-success";
-        } else {
-            $("#operationStatus").text("Closed");
-            document.getElementById("operationStatus").className = "text-danger";
-        }
-        $("#trx-balance").text(trxBalance.toFixed(0));
-        $("#tkn-balance").text(tknBalance.toFixed(2));
-    }).catch((err) => {
-        console.log(err)
-    });
-    
-    // Fee percentage
-    bankContract.feePercentage().call().then(result => {
-        $(".fee-percentage").text(result + '% per Trade');
-        document.getElementsByClassName("fee-percentage").className = "text-white";
-    }).catch((err) => {
-        console.log(err)
-    })
-    
-    var totalOwed = $("#liquidityContributed").val();
-    var totalPaid = $("#returnsPaid").val();
-    var remaining = totalOwed - totalPaid / 1e18;
-    $("#remaining").text('You are owed' + remaining)
 }

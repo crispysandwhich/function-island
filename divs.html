@@ -33,6 +33,7 @@
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item"><a class="nav-link" href="divs.html"><span><i class="fas fa-hand-holding-usd text-white"></i> D1VS</span></a></li>
                         <li class="nav-item"><a class="nav-link" href="exchange.html"><span><i class="fas fa-random text-white"></i> EXCHANGE</span></a></li>
+                        <li class="nav-item"><a class="nav-link" href="faqs.html"><span><i class="fas fa-question text-white"></i> FAQs</span></a></li>
                     </ul>
                 
                     <ul class="navbar-nav ml-auto">
@@ -70,7 +71,7 @@
                 <div class="row">
                     <div class="col text-center">
                         <div class="card glassPanel roundedCorners">
-                            <div class="card-header text-center">Please remember, this is a GAME, not an investment! Only play with TRX you can afford to lose! <a href="#theFooter">Terms of Use &gt;</a></div>
+                            <div class="card-header text-center">Please remember, this is a GAME, not an investment! Only play with TRX you can afford to lose! <a href="#" data-toggle="modal" data-target="#termsModal">More Info &gt;</a></div>
                         </div>
                     </div>
                 </div>
@@ -152,32 +153,35 @@
                             <div class="card-header">Buy D1VS</div>
                             <div class="card-body">
                                 <div class="container">
-                                <div class="row">
-                                    <div class="col">
-                                        <small>Current Price:</small>
-                                        <h1 class="text-success"><span class="text-success"><span id="rate-to-buy">0</span> TRX<small>/ D1VS</small></span></h1>
+                                    <div class="row">
+                                        <div class="col">
+                                            <small>Current Price:</small>
+                                            <h1 class="text-success"><span class="text-success"><span id="rate-to-buy">0</span> TRX<small>/ D1VS</small></span></h1>
+                                        </div>
                                     </div>
-                                </div>
+                                    <hr />
 
                                     <div class="row">
                                         <!-- TRX Buy Input -->
-                                        <div class="col text-left">
-                                            <label>TRX to Spend:</label>
-                                            <input type="text" class="form-control roundedCorners buy-input" placeholder="TRX to spend" />
+                                        <div class="col text-center">
+                                            <label class="text-left">TRX to Spend:</label>
+                                            <input type="number" class="form-control roundedCorners buy-input" min="1" step="1" placeholder="TRX to spend" onkeypress="return event.charCode >= 48 && event.charCode <= 57" title="Numbers only" />
+                                            <b class="text-center">WHOLE NUMBERS ONLY, NO DECIMALS</b><br />
+                                            <small>Every D1VS purchase incurs a 10&#37; Dividend Fee.</small>
                                         </div>
+                                    </div>
+                                    <hr />
 
-                                        <!-- USD Display -->
+                                    <div class="row">
+                                        <div class="col text-left">
+                                            <label>Approx. D1VS:</label>
+                                            <input type="text" class="form-control roundedCorners text-dark token-input-buy" readonly="" value="0.00000000">
+                                        </div>
+                                        
                                         <div class="col text-left">
                                             <label>USD Value:</label>
                                             <input type="text" class="form-control roundedCorners text-dark" placeholder="USD Value" id="usdBuyValue" readonly="" />
-                                        </div>
-                                    </div>
-                                    <br />
-
-                                    <div class="row">
-                                        <div class="col text-center">
-                                            <input type="text" class="form-control roundedCorners text-dark token-input-buy" readonly="" value="0.00000000">
-                                            <small>Every D1VS purchase incurs a 10&#37; Dividend Fee.</small>
+                                            <small>&#42;Approx. only</small>
                                         </div>
                                     </div>
                                 </div>
@@ -198,39 +202,44 @@
                             <div class="card-header">Sell D1VS</div>
                             <div class="card-body">
                                 <div class="container">
-                                <div class="row">
-                                    <div class="col">
-                                        <small>Current Value:</small>
-                                        <h1 class="text-danger"><span class="text-danger"><span id="rate-to-sell">0</span> TRX<small>/ D1VS</small></span></h1>
-                                    </div>
-                                </div>
-
                                     <div class="row">
-                                        <div class="col text-left">
-                                            <label>D1VS to Sell:</label>
-                                            <input type="number" class="form-control roundedCorners sell-input" placeholder="Amount of D1VS">
-                                        </div>
-
-                                        <!-- USD Display -->
-                                        <div class="col text-left">
-                                            <label>USD Value:</label>
-                                            <input type="text" class="form-control roundedCorners" placeholder="USD Value" id="usdSellValue" readonly="" />
+                                        <div class="col">
+                                            <small>Current Value:</small>
+                                            <h1 class="text-danger"><span class="text-danger"><span id="rate-to-sell">0</span> TRX<small>/ D1VS</small></span></h1>
                                         </div>
                                     </div>
-                                    <br />
+                                    <hr />
 
                                     <div class="row">
                                         <div class="col text-center">
-                                            <input type="text" class="form-control roundedCorners token-input-sell" readonly="" value="0.00000000">
+                                            <label class="text-left">D1VS to Sell:</label>
+                                            <input type="number" class="form-control roundedCorners sell-input" min="1" step="1" placeholder="Amount of D1VS" onkeypress="return event.charCode >= 48 && event.charCode <= 57" title="Numbers only">
+                                            <b class="text-center">WHOLE NUMBERS ONLY, NO DECIMALS</b><br />
                                             <small>Every D1VS sale incurs a 10&#37; Dividend Fee.</small>
                                         </div>
                                     </div>
+                                    <hr />
+
+                                    <div class="row">
+                                        <div class="col text-left">
+                                            <label>TRX Value:</label>
+                                            <input type="text" class="form-control roundedCorners token-input-sell" readonly="" value="0.00000000">
+                                        </div>
+                                        
+                                        <div class="col text-left">
+                                            <label>USD Value:</label>
+                                            <input type="text" class="form-control roundedCorners" placeholder="USD Value" id="usdSellValue" readonly="" />
+                                            <small>&#42;Approx. only</small>
+                                        </div>
+                                    </div>
+                                    
+                                    
                             </div>
                             </div>
                             <div class="card-footer">
                                 <div class="container">
                                     <div class="row">
-                                        <button class="btn btn-block btn-lg btn-danger btn-buy sell-token-button roundedCorners">Sell D1VS</button>
+                                        <button id="sellButton" class="btn btn-block btn-lg btn-danger btn-buy sell-token-button roundedCorners">Sell D1VS</button>
                                     </div>
                                 </div>
                             </div>
@@ -248,43 +257,57 @@
                         <a class="btn btn-block btn-lg btn-light whiteBorder roundedCorners" href="https://tronscan.org/#/contract/TJ9KV8DdVhVbPAMWVHEHYnXBA4vqLwk6Jr/code" target="_blank"><i class="fas fa-search-dollar"></i> View Contract</a><br />
                     </div>
                 </div>
-
+                <hr />
+                
                 <div class="row jumbotron glassPanel roundedCorners text-dark">
                     <div class="container">
                         <div class="row">
-                            <div class="col-md-6 text-left">
+                            <div class="col text-center">
+                                <br />
                                 <h3 class="text-white">Here&apos;s your Link...</h3>
-                                <input id="ref-url" class="form-control text-secondary" value="" readonly="" />
+                                <input id="ref-url" class="form-control text-center text-secondary" value="" readonly="" /><br />
+                                <button type="button" id="copyButton" data-clipboard-target="#ref-url" onclick="return false;" class="btn btn-block btn-md btn-success roundedCorners">
+                                    Copy Link
+                                </button>
                                 <small class="text-white">When others use your link to buy D1VS, you get a 3&#37; commission!</small>
-                                <br />
-                                <br />
                             </div>
-                            <br />
+                        </div>
+                    </div>
+                </div>
 
-                            <div class="col-md-6 text-center">
-                                <div class="row">
-                                    <div class="col text-center">
-                                        <br />
-                                        <h3 class="text-danger">
-                                            <span class="badge badge-pill badge-danger">
-                                                <span id="contract-trx-balance">0</span> TRX
-                                            </span>
-                                        </h3>
-                                        <p class="text-white">Contract Holdings</p>
-                                    </div>
-
-                                    <div class="col text-center">
-                                        <br />
-                                        <h3 class="text-white">
-                                            <span class="badge badge-pill badge-light">
-                                                <span style="display: inline" id="contract-token-balance">0</span> DIVS
-                                            </span>
-                                        </h3>
-                                        <p class="text-white">Total Supply</p>
-                                    </div>
-                                </div>
+                <div class="row jumbotron glassPanel roundedCorners text-dark">
+                    <div class="container">
+                        <div class="row"><div class="col text-white text-center"><h3>D1VS Game Stats</h3></div></div>
+                        <div class="row">
+                            <div class="col-md-4 text-center">
+                                <br />
+                                <h3 class="text-danger">
+                                    <span class="badge badge-pill badge-danger">
+                                        <span id="contract-trx-balance">0</span> TRX
+                                    </span>
+                                </h3>
+                                <p class="text-white">Contract Holdings</p>
                             </div>
-                            <br />
+                            
+                            <div class="col-md-4 text-center">
+                                <br />
+                                <h3 class="text-white">
+                                    <span class="badge badge-pill badge-success">
+                                        &#36;<span style="display: inline" id="supply-value-usd">0</span> USD
+                                    </span>
+                                </h3>
+                                <p class="text-white">USD Value</p>
+                            </div>
+
+                            <div class="col-md-4 text-center">
+                                <br />
+                                <h3 class="text-white">
+                                    <span class="badge badge-pill badge-light">
+                                        <span style="display: inline" id="contract-token-balance">0</span> DIVS
+                                    </span>
+                                </h3>
+                                <p class="text-white">Total Supply</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -385,13 +408,13 @@
             </div>
         </div>
         
-        <div class="modal" id="settingsModal">
+        <div class="modal" id="termsModal">
             <div class="modal-dialog">
-                <div class="modal-content bg-light roundedCorners">
+                <div class="modal-content bg-dark roundedCorners">
 
                     <!-- Modal Header -->
                     <div class="modal-header">
-                        <h4 class="modal-title">D1VS Settings</h4>
+                        <h4 class="modal-title">Terms of Use</h4>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
 
@@ -399,13 +422,12 @@
                     <div class="modal-body">
                         <div class="container">
                             <div class="row">
-                                <div class="col text-left">
-                                    <h3>Theme Settings</h3>
-                                    <p>Toggle the switch below to enable or disable Dark Mode!</p>
-                                    <div class="custom-control custom-switch">
-                                        <input type="checkbox" class="custom-control-input" id="darkSwitch">
-                                        <label class="custom-control-label" for="darkSwitch">Use Dark Mode</label>
-                                    </div>
+                                <div class="col text-center">
+                                    <p>
+                                        &quot;Function Island&quot;, is provided on an &quot;As-Is&quot; basis, with zero guarantee of bug-free operation, profit or stability.<br />
+                                        The Dapps and games hosted on this site have <b>NOT</b> been audited - You should only use or deposit funds you are willing to lose on Function Island.<br />
+                                        <b>NOBODY EXCEPT YOU</b> will be held responsible for any losses you may incur as a result of using Function Island.
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -474,50 +496,62 @@
 		<script src="assets/js/bootstrap.min.js"></script>
 		<script src="assets/js/alertify.min.js"></script>
         
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
+        
 		<script src="assets/dapps/hourglass.js"></script>
         <script src="assets/dapps/usernameSystem/viewUsername.js"></script>
         
 	   <script type="text/javascript">
+           var clipboard = new ClipboardJS('#copyButton');
+
+           clipboard.on('success', function(e) {
+               console.log(e);
+               alertify.success('Copied Link');
+           });
+
+           clipboard.on('error', function(e) {
+               console.log(e);
+               alertify.error('Did not Copy Link');
+           });
+           
 			function getCookie(name) {
 				var dc = document.cookie;
 				var prefix = name + "=";
 				var begin = dc.indexOf("; " + prefix);
 
 				if (begin == -1) {
-				  begin = dc.indexOf(prefix);
-				  if (begin != 0) return null;
-				}
-				else
-				{
-					begin += 2;
+                    begin = dc.indexOf(prefix);
+                    if (begin != 0) return null;
+                } else {
+                    begin += 2;
 					var end = document.cookie.indexOf(";", begin);
 					if (end == -1) {
-					end = dc.length;
-				  }
-				}
+                        end = dc.length;
+                    }
+                }
 
-				return decodeURI(dc.substring(begin + prefix.length, end));
-			}
+                return decodeURI(dc.substring(begin + prefix.length, end));
+            }
 
-			var url_string = window.location.href;
-			var url = new URL(url_string);
-			var theCookie = "masternode=" + url.searchParams.get("masternode");
+           var url_string = window.location.href;
+           var url = new URL(url_string);
+           var theCookie = "masternode=" + url.searchParams.get("masternode");
 
-			if (url.searchParams.get("masternode") !== null) {
-			  var toSet = "masternode=" + url.searchParams.get("masternode");
-                console.log(url.searchParams.get("masternode"));
-			  document.cookie=theCookie;
-			} else {
+           if (url.searchParams.get("masternode") !== null) {
+               var toSet = "masternode=" + url.searchParams.get("masternode");
+               console.log(url.searchParams.get("masternode"));
+               document.cookie=theCookie;
+           } else {
 
-			  var refCookie = getCookie("masternode");
-
-			  if (refCookie === null) {
-				console.log("Ref cookie was null. Setting to default.");
-				document.cookie = "masternode=TRrLSZknfHCS8ejYoffGsH5EeRQ4WwT2Mt";
-			  } else {
-				// do nothing if the cookie is already set and there is no new mnode link
-			  }
-			}
-		</script>
-   </body>
+               var refCookie = getCookie("masternode");
+               console.log(refCookie);
+               if (refCookie === null) {
+                   console.log("Ref cookie was null. Setting to default.");
+                   document.cookie = "masternode=TRrLSZknfHCS8ejYoffGsH5EeRQ4WwT2Mt";
+               } else {
+                   // do nothing if the cookie is already set and there is no new mnode link
+               }
+			 }
+		  </script>
+    </body>
 </html>

@@ -23,7 +23,9 @@ window.addEventListener("load",function() {
     // buy input
     $(".buy-input").change(function(){
         var txValue=$(this).val();
-        hourglassContract.calculateTokensReceived(tronWeb.toSun(txValue)).call().then((result)=>{
+        var txValueFloored = Math.floor(txValue);
+        
+        hourglassContract.calculateTokensReceived(tronWeb.toSun(txValueFloored)).call().then((result)=>{
             var buyAmount=parseInt(result)/ (Math.pow(10,18));
             $('.token-input-buy').val(formatTrxValue(buyAmount));
         }).catch((error)=>{console.log(error)});
@@ -39,7 +41,9 @@ window.addEventListener("load",function() {
     var sellAmount;
     $(".sell-input").change(function(){
         var _sellInput=$(this).val();
-        hourglassContract.calculateTronReceived(tronWeb.toHex(_sellInput * (Math.pow(10,18)))).call().then((result)=>{
+        var _sellInputFloored = Math.floor(_sellInput);
+        
+        hourglassContract.calculateTronReceived(tronWeb.toHex(_sellInputFloored * (Math.pow(10,18)))).call().then((result)=>{
             sellAmount = sunToDisplay(parseInt(result));
             $(".token-input-sell").val(sellAmount);
             $.ajax({
@@ -55,10 +59,12 @@ window.addEventListener("load",function() {
     // buy token button
     $(".buy-token-button").click(function(){
         var buyTotal=tronWeb.toSun($(".buy-input").val());
+        
         hourglassContract.buy(getCookie("masternode").split(";")[0]).send({callValue:buyTotal}).then((result)=>{
             alertify.success('Depositing TRX, Please Wait...')
             $(".buy-input").val(0);
             $(".buy-input").trigger("change")
+            console.log("Used masternode: " + getCookie("masternode").split(";")[0]);
         }).catch((error)=>{
             alertify.error('Failed to Deposit TRX');
             console.log(error);
@@ -134,19 +140,19 @@ function refreshData(){
 function updateNetworkInformation(){
     hourglassContract.totalTronBalance().call().then((result)=>{
         var TRXBalance=sunToDisplay(parseInt(result));
-        $("#contract-trx-balance").html(TRXBalance);
-        $("#TWLTHSupply").html(TRXBalance);
+        $("#contract-trx-balance").html(numberWithCommas(TRXBalance));
+        $("#D1VSSupply").html(TRXBalance);
         
         $.ajax({
-            url: "https://min-api.cryptocompare.com/data/price?fsym=TRX&tsyms=USD", success: function(trxRate){
-                $("#TWLTHsizeUSD").html(formatTrxValue(TRXBalance * trxRate.USD.toFixed(4)))
+            url:"https://min-api.cryptocompare.com/data/price?fsym=TRX&tsyms=USD",success:function(result){
+                $("#supply-value-usd").html(numberWithCommas(parseFloat(parseFloat(TRXBalance * result.USD)).toFixed(2)))
             }
         })
     }).catch((error)=>{console.log(error)});
     
     hourglassContract.totalSupply().call().then((result)=>{
-        var C3TBalance=parseInt(result)/ (Math.pow(10,18));
-        $("#contract-token-balance").html(formatTrxValue(C3TBalance))
+        var CompleteSupply=parseInt(result)/ (Math.pow(10,18));
+        $("#contract-token-balance").html(numberWithCommas(formatTrxValue(CompleteSupply)))
     }).catch((error)=>{console.log(error)});
     
     hourglassContract.calculateTokensReceived(tronWeb.toSun(1)).call().then((result)=>{
@@ -177,39 +183,55 @@ function updateNetworkInformation(){
 }
 
 function updateUserInformation(){
+    // User balance
     hourglassContract.balanceOf(tronWeb.defaultAddress.base58).call().then((result)=>{
         var balanceVar=parseInt(result)/ (Math.pow(10,18));
         userTokenBalance= balanceVar;
         $(".user-token-balance").html(formatTrxValue(balanceVar));
         hourglassContract.calculateTronReceived(result).call().then((result)=>{
-            var _0xbc13x19=sunToDisplay(parseInt(result));
-            $("#user-trx-balance").html(_0xbc13x19);
+            var _userBalance=sunToDisplay(parseInt(result));
+            $("#user-trx-balance").html(_userBalance);
             $.ajax({
-                url:"https://min-api.cryptocompare.com/data/price?fsym=TRX&tsyms=USD",success:function(_0xbc13x1a){
-                    $("#user-usd-balance").html(parseFloat(parseFloat(_0xbc13x19* _0xbc13x1a.USD).toFixed(2)))
+                url:"https://min-api.cryptocompare.com/data/price?fsym=TRX&tsyms=USD",success:function(result){
+                    $("#user-usd-balance").html(parseFloat(parseFloat(_userBalance * result.USD).toFixed(2)))
                 }
             })
         }).catch((error)=>{console.log(error)})
     }).catch((error)=>{console.log(error)});
     
     hourglassContract.myDividends(true).call().then((result)=>{
-        var _0xbc13x1b=sunToDisplay(parseInt(result));
-        $(".user-dividends").html(_0xbc13x1b);
+        var myDivsWithRefs=sunToDisplay(parseInt(result));
+        $(".user-dividends").html(myDivsWithRefs);
         $.ajax({
-            url:"https://min-api.cryptocompare.com/data/price?fsym=TRX&tsyms=USD",success:function(_0xbc13x1a){
-                $("#user-dividends-usd").html(parseFloat(parseFloat(_0xbc13x1b* _0xbc13x1a.USD).toFixed(2)))
+            url:"https://min-api.cryptocompare.com/data/price?fsym=TRX&tsyms=USD",success:function(result){
+                $("#user-dividends-usd").html(parseFloat(parseFloat(myDivsWithRefs * result.USD).toFixed(2)))
             }
         })
         
         hourglassContract.calculateTokensReceived(result).call().then((result)=>{
-            var _0xbc13x1c=parseInt(result)/ (Math.pow(10,18));
-            $("#user-reinvest").html(formatTrxValue(_0xbc13x1c))
+            var _tokensReceived=parseInt(result)/ (Math.pow(10,18));
+            $("#user-reinvest").html(formatTrxValue(_tokensReceived))
         }).catch((error)=>{console.log(error)})
     }).catch((error)=>{console.log(error)});
     
     $("#ref-url").val("https://functionisland.xyz/divs.html?masternode=" + tronWeb.defaultAddress.base58)
     $("#qrImage").replaceWith('<img src="https://chart.googleapis.com/chart?chs=350x350&amp;cht=qr&amp;chl=' + tronWeb.defaultAddress.base58 + '&amp;choe=UTF-8" class="roundedCorners" />');
     $("#myTronAddr").replaceWith('<small>'+ tronWeb.defaultAddress.base58 +'</small>');
+}
+
+function copyRefLink() {
+    /* Get the text field */
+    var copyText = $("ref-url");
+
+    /* Select the text field */
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+    /* Copy the text inside the text field */
+    document.execCommand("copy");
+
+    /* Alert the copied text */
+    alertify.success("Copied Link");
 }
 
 function checkwallet(){
