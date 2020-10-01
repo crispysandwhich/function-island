@@ -144,8 +144,10 @@ function updateNetworkInformation(){
         $("#D1VSSupply").html(TRXBalance);
         
         $.ajax({
-            url:"https://min-api.cryptocompare.com/data/price?fsym=TRX&tsyms=USD",success:function(result){
+            url:"https://min-api.cryptocompare.com/data/price?fsym=TRX&tsyms=USD,BTC,ETH",success:function(result){
                 $("#supply-value-usd").html(numberWithCommas(parseFloat(parseFloat(TRXBalance * result.USD)).toFixed(2)))
+                $("#supply-value-btc").html(numberWithCommas(parseFloat(parseFloat(TRXBalance * result.BTC)).toFixed(2)))
+                $("#supply-value-eth").html(numberWithCommas(parseFloat(parseFloat(TRXBalance * result.ETH)).toFixed(2)))
             }
         })
     }).catch((error)=>{console.log(error)});
