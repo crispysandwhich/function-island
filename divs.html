@@ -32,7 +32,6 @@
                 <div class="collapse navbar-collapse" id="navbarColor03">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item"><a class="nav-link" href="divs.html"><span><i class="fas fa-hand-holding-usd text-white"></i> D1VS</span></a></li>
-                        <li class="nav-item"><a class="nav-link" href="exchange.html"><span><i class="fas fa-random text-white"></i> EXCHANGE</span></a></li>
                     </ul>
                 
                     <ul class="navbar-nav ml-auto">
@@ -67,9 +66,9 @@
                 <div class="container">
                     <div class="row text-center">
                         <div class="col text-center">
-                            <img src="assets/img/logo.png" width="140px" height="140px" class="rounded-circle" />
-                            <h1><span>D1VS Game</span></h1>
-                            <p class="text-white">Buy &amp; HODL D1VS, and earn TRX Dividends!</p>
+                            <img src="assets/img/beluga.png" width="100px" height="100px" class="rounded-circle" />
+                            <h3><span>D1VS Game</span></h3>
+                            <small class="text-white">Buy &amp; HODL D1VS, and earn TRX Dividends!</small>
                         </div>
                     </div>
                 </div>
@@ -88,16 +87,18 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="card glassPanel roundedCorners">
-                            <div class="card-header">My D1VS</div>
+                            <div class="card-header">My D1VS <small>(Approx. <span id="supplyPercentage">0</span>&#37; of the Total Supply)</small></div>
                             <div class="card-body">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-center">
-                                            <h3><img src="assets/img/logo.png" width="25px" height="25px" /> <span class="user-token-balance text-white">0.00000000</span> D1VS</h3>
-                                            <h5>
-                                                <span class="badge badge-pill badge-danger"><span id="user-trx-balance">0.00000000</span> TRX</span>
-                                                <span class="badge badge-pill badge-light text-dark">$<span id="user-usd-balance" class="text-dark">0.00</span> USD</span>
-                                            </h5>
+                                            <h3>
+                                                <img src="assets/img/beluga.png" width="25px" height="25px" /><br />
+                                                <span class="user-token-balance text-white">0.00000000</span> D1VS
+                                            </h3>
+                                            <p>
+                                                <span id="user-trx-balance">0.00000000</span> TRX ($<span id="user-usd-balance" class="text-white">0.00</span> USD)
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -126,12 +127,18 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-center">
-                                            <h5 class="text-white"><img src="assets/img/tron.png" width="25px" height="25px" /> <span class="user-dividends">0.00000000</span> TRX</h5>
+                                            <h3 class="text-white">
+                                                <img src="assets/img/tron.png" width="25px" height="25px" /><br />
+                                                <span class="user-dividends">0.00000000</span> TRX
+                                            </h3>
                                             <p>My Dividends</p>
                                         </div>
 
                                         <div class="col text-center">
-                                            <h5 class="text-white">+ &#36;<span id="user-dividends-usd" class="text-white">0.00</span> USD</h5>
+                                            <h3 class="text-white">
+                                                <img src="assets/img/dollar.png" width="25px" height="25px" /><br />
+                                                + &#36;<span id="user-dividends-usd" class="text-white">0.00</span> USD
+                                            </h3>
                                             <p>Growth on Reinvest</p>
                                         </div>
                                     </div>
@@ -492,12 +499,18 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col text-center">
-                                    <h3><img src="assets/img/tron.png" width="25px" height="25px" /> <span id="rainmakerDividends">0</span> TRX</h3>
+                                    <h3>
+                                        <img src="assets/img/tron.png" width="25px" height="25px" /><br />
+                                        <span id="rainmakerDividends">0</span> TRX
+                                    </h3>
                                     <small>Pricefloor Earnings</small>
                                 </div>
                                 
                                 <div class="col text-center">
-                                    <h3><img src="assets/img/logo.png" width="25px" height="25px" /> <span id="rainmakerTokens">0</span> D1VS</h3>
+                                    <h3>
+                                        <img src="assets/img/logo.png" width="25px" height="25px" /><br />
+                                        <span id="rainmakerTokens">0</span> D1VS
+                                    </h3>
                                     <small>Providing Permanent Value</small>
                                 </div>
                             </div>
