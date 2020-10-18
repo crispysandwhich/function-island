@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="FunctionDEX">
-        <meta name="author" content="Mr Function">
+        <meta name="description" content="Function Island | Dapps and Games on TRON">
+        <meta name="author" content="Function Island">
         <title>Function Island | D1VS</title>
 
         <!-- Alertify CSS -->
@@ -32,8 +32,6 @@
                 <div class="collapse navbar-collapse" id="navbarColor03">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item"><a class="nav-link" href="divs.html"><span><i class="fas fa-hand-holding-usd text-white"></i> D1VS</span></a></li>
-                        <li class="nav-item"><a class="nav-link" href="exchange.html"><span><i class="fas fa-random text-white"></i> EXCHANGE</span></a></li>
-                        <li class="nav-item"><a class="nav-link" href="faqs.html"><span><i class="fas fa-question text-white"></i> FAQs</span></a></li>
                     </ul>
                 
                     <ul class="navbar-nav ml-auto">
@@ -47,7 +45,16 @@
                             </div>
                         </li>
                         
-                        <li class="nav-item"><a class="nav-link" href="https://github.com/FunctionIsland" target="_blank"><i class="fab fa-github text-white"></i> <span>GitHub</span></a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-info-circle text-white"></i> <span>Info</span></a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="faqs.html"><i class="fas fa-question text-dark"></i> FAQs</a>
+                                <a class="dropdown-item" href="https://github.com/FunctionIsland" target="_blank"><i class="fab fa-github text-dark"></i> <span>GitHub</span></a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="onboard.html"><i class="fas fa-wallet text-dark"></i> TRON Wallets</a>
+                            </div>
+                        </li>
+                        
                         <li class="nav-item"><a class="nav-link" href="names.html"><i class="fas fa-user text-white"></i> <span class="arcTag">Player</span></a></li>
                     </ul>
                 </div>
@@ -59,9 +66,9 @@
                 <div class="container">
                     <div class="row text-center">
                         <div class="col text-center">
-                            <img src="assets/img/logo.png" width="140px" height="140px" class="rounded-circle" />
-                            <h1><span>D1VS Game</span></h1>
-                            <p class="text-white">Buy &amp; HODL D1VS, and earn TRX Dividends!</p>
+                            <img src="assets/img/beluga.png" width="100px" height="100px" class="rounded-circle" />
+                            <h3><span>D1VS Game</span></h3>
+                            <small class="text-white">Buy &amp; HODL D1VS, and earn TRX Dividends!</small>
                         </div>
                     </div>
                 </div>
@@ -80,16 +87,18 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="card glassPanel roundedCorners">
-                            <div class="card-header">My Wallet</div>
+                            <div class="card-header">My D1VS <small>(Approx. <span id="supplyPercentage">0</span>&#37; of the Total Supply)</small></div>
                             <div class="card-body">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-center">
-                                            <h3><span class="user-token-balance text-white">0.00000000</span> D1VS</h3>
-                                            <h5>
-                                                <span class="badge badge-pill badge-danger"><span id="user-trx-balance">0.00000000</span> TRX</span>
-                                                 / <span class="badge badge-pill badge-light text-dark">$<span id="user-usd-balance" class="text-dark">0.00</span> USD</span>
-                                            </h5>
+                                            <h3>
+                                                <img src="assets/img/beluga.png" width="25px" height="25px" /><br />
+                                                <span class="user-token-balance text-white">0.00000000</span> D1VS
+                                            </h3>
+                                            <p>
+                                                <span id="user-trx-balance">0.00000000</span> TRX ($<span id="user-usd-balance" class="text-white">0.00</span> USD)
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -98,11 +107,11 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-center">
-                                            <a class="btn btn-block btn-md btn-dark redBorder text-light roundedCorners" href="#" data-toggle="modal" data-target="#sendDivsModal"><i class="fas fa-arrow-up"></i> Send</a>
+                                            <a class="btn btn-block btn-md btn-dark silverBorder text-white roundedCorners" href="#" data-toggle="modal" data-target="#sendDivsModal"><i class="fas fa-arrow-up"></i> Send</a>
                                         </div>
 
                                         <div class="col text-center">
-                                            <a class="btn btn-block btn-md btn-dark greenBorder text-light roundedCorners" href="#" data-toggle="modal" data-target="#receiveDivsModal"><i class="fas fa-arrow-down"></i> Receive</a>
+                                            <a class="btn btn-block btn-md btn-dark silverBorder text-white roundedCorners" href="#" data-toggle="modal" data-target="#receiveDivsModal"><i class="fas fa-arrow-down"></i> Receive</a>
                                         </div>
                                     </div>
                                 </div>
@@ -113,17 +122,23 @@
 
                     <div class="col-md-6">
                         <div class="card glassPanel roundedCorners">
-                            <div class="card-header">My D1VS</div>
+                            <div class="card-header">My Earnings</div>
                             <div class="card-body">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-center">
-                                            <h5 class="text-white"><span class="user-dividends">0.00000000</span> TRX</h5>
+                                            <h3 class="text-white">
+                                                <img src="assets/img/tron.png" width="25px" height="25px" /><br />
+                                                <span class="user-dividends">0.00000000</span> TRX
+                                            </h3>
                                             <p>My Dividends</p>
                                         </div>
 
                                         <div class="col text-center">
-                                            <h5 class="text-white">+ &#36;<span id="user-dividends-usd" class="text-white">0.00</span> USD</h5>
+                                            <h3 class="text-white">
+                                                <img src="assets/img/dollar.png" width="25px" height="25px" /><br />
+                                                + &#36;<span id="user-dividends-usd" class="text-white">0.00</span> USD
+                                            </h3>
                                             <p>Growth on Reinvest</p>
                                         </div>
                                     </div>
@@ -133,11 +148,11 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-center">
-                                            <button class="btn btn-block btn-primary btn-reinvest roundedCorners"><b><i class="fas fa-recycle"></i> +<span id="user-reinvest">0.00</span> D1VS</b></button>
+                                            <button class="btn btn-block btn-dark silverBorder text-white btn-reinvest roundedCorners"><b><i class="fas fa-recycle"></i> +<span id="user-reinvest">0.00</span> D1VS</b></button>
                                         </div>
 
                                         <div class="col text-center">
-                                            <button class="btn btn-block btn-dark btn-withdraw roundedCorners"><i class="fas fa-hand-holding-usd"></i> Withdraw</button>
+                                            <button class="btn btn-block btn-dark silverBorder text-white btn-withdraw roundedCorners"><i class="fas fa-hand-holding-usd"></i> Withdraw</button>
                                         </div>
                                     </div>
                                 </div>
@@ -154,9 +169,9 @@
                             <div class="card-body">
                                 <div class="container">
                                     <div class="row">
-                                        <div class="col">
+                                        <div class="col text-center">
                                             <small>Current Price:</small>
-                                            <h1 class="text-success"><span class="text-success"><span id="rate-to-buy">0</span> TRX<small>/ D1VS</small></span></h1>
+                                            <h1 class="text-white"><img src="assets/img/tron.png" width="35px" height="35px" /> <span id="rate-to-buy">0</span> TRX</h1>
                                         </div>
                                     </div>
                                     <hr />
@@ -189,7 +204,7 @@
                             <div class="card-footer">
                                 <div class="container">
                                     <div class="row">
-                                        <button class="btn btn-block btn-lg btn-success btn-buy buy-token-button roundedCorners">Buy D1VS</button>
+                                        <button class="btn btn-block btn-lg btn-success btn-buy buy-token-button roundedCorners" id="buyTokensButton" style="display: none;">Buy D1VS</button>
                                     </div>
                                 </div>
                             </div>
@@ -203,9 +218,9 @@
                             <div class="card-body">
                                 <div class="container">
                                     <div class="row">
-                                        <div class="col">
+                                        <div class="col text-center">
                                             <small>Current Value:</small>
-                                            <h1 class="text-danger"><span class="text-danger"><span id="rate-to-sell">0</span> TRX<small>/ D1VS</small></span></h1>
+                                            <h1 class="text-white"><img src="assets/img/tron.png" width="35px" height="35px" /> <span id="rate-to-sell">0</span> TRX</h1>
                                         </div>
                                     </div>
                                     <hr />
@@ -239,7 +254,7 @@
                             <div class="card-footer">
                                 <div class="container">
                                     <div class="row">
-                                        <button id="sellButton" class="btn btn-block btn-lg btn-danger btn-buy sell-token-button roundedCorners">Sell D1VS</button>
+                                        <button id="sellButton" class="btn btn-block btn-lg btn-danger btn-buy sell-token-button roundedCorners" style="display: none;">Sell D1VS</button>
                                     </div>
                                 </div>
                             </div>
@@ -277,9 +292,9 @@
 
                 <div class="row jumbotron glassPanel roundedCorners text-dark">
                     <div class="container">
-                        <div class="row"><div class="col text-white text-center"><h3>D1VS Game Stats</h3></div></div>
+                        <div class="row"><div class="col text-white text-center"><h3>Contract Value Data</h3></div></div>
                         <div class="row">
-                            <div class="col-md-4 text-center">
+                            <div class="col text-center">
                                 <br />
                                 <h3 class="text-danger">
                                     <span class="badge badge-pill badge-danger">
@@ -289,7 +304,7 @@
                                 <p class="text-white">Contract Holdings</p>
                             </div>
                             
-                            <div class="col-md-4 text-center">
+                            <div class="col text-center">
                                 <br />
                                 <h3 class="text-white">
                                     <span class="badge badge-pill badge-success">
@@ -299,7 +314,7 @@
                                 <p class="text-white">USD Value</p>
                             </div>
 
-                            <div class="col-md-4 text-center">
+                            <div class="col text-center">
                                 <br />
                                 <h3 class="text-white">
                                     <span class="badge badge-pill badge-light">
@@ -308,10 +323,8 @@
                                 </h3>
                                 <p class="text-white">Total Supply</p>
                             </div>
-                        </div>
-                        
-                        <div class="row">
-                            <div class="col-md-6 text-center">
+                            
+                            <div class="col text-center">
                                 <br />
                                 <h3 class="text-danger">
                                     <span class="badge badge-pill badge-warning">
@@ -321,7 +334,7 @@
                                 <p class="text-white">Game value (in BTC)</p>
                             </div>
                             
-                            <div class="col-md-6 text-center">
+                            <div class="col text-center">
                                 <br />
                                 <h3 class="text-danger">
                                     <span class="badge badge-pill badge-info">
@@ -373,8 +386,12 @@
                     <div class="modal-body">
                         <div class="container">
                             <div class="row">
-                                <div class="col">
-                                    <input type="text" class="form-control roundedCorners transfer-input" placeholder="D1VS to Send..." /><br />
+                                <div class="col-md-4">
+                                    <label>Quantity</label>
+                                    <input type="text" class="form-control roundedCorners transfer-input" placeholder="D1VS to Send..." />
+                                </div>
+                                <div class="col-md-8">
+                                    <label>Recipient Address</label>
                                     <input type="text" class="form-control roundedCorners recipient-input" placeholder="Address to send D1VS to..." />
                                 </div>
                             </div>
@@ -383,6 +400,7 @@
                             <div class="row">
                                 <div class="col text-center">
                                     <button class="btn btn-info btn-block roundedCorners btn-sell transfer-token-button"><i class="fas fa-arrow-up"></i> Send D1VS <i class="fas fa-arrow-up"></i></button>
+                                    <small>Sending D1VS incurs a 10&#37; Dividend Fee from the total sent.</small>
                                 </div>
                             </div>
                         </div>
@@ -413,6 +431,8 @@
                             <div class="row">
                                 <div class="col text-center">
                                     <img id="qrImage" src="#" class="roundedCorners" alt="Your Crop Address as a QR Code"><br />
+                                    <small>Scan this QR Code to tip <span class="arcTag">Player</span>!</small>
+                                    <br />
                                     <br />
                                     <b>TRON Address: </b><br />
                                     <small id="myTronAddr"></small>
@@ -479,12 +499,18 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col text-center">
-                                    <h3><span id="rainmakerDividends">0</span> TRX</h3>
+                                    <h3>
+                                        <img src="assets/img/tron.png" width="25px" height="25px" /><br />
+                                        <span id="rainmakerDividends">0</span> TRX
+                                    </h3>
                                     <small>Pricefloor Earnings</small>
                                 </div>
                                 
                                 <div class="col text-center">
-                                    <h3><span id="rainmakerTokens">0</span> D1VS</h3>
+                                    <h3>
+                                        <img src="assets/img/logo.png" width="25px" height="25px" /><br />
+                                        <span id="rainmakerTokens">0</span> D1VS
+                                    </h3>
                                     <small>Providing Permanent Value</small>
                                 </div>
                             </div>
